@@ -21,6 +21,15 @@ It raises **possible concerns for expert review**. It doesn't decide that a fili
 | `terrestrial-p1546` | Terrestrial | ITU-R P.1546-6 field strength on the Finnish boundary, for land-mobile notices from Russia, Sweden, Estonia, Norway and Denmark |
 | `terrestrial-not-calculated` | Terrestrial | A nearby notice can't be calculated, for example with no antenna height |
 
+## Cached analysis CLI
+
+For repeated offline analysis, the optional cache workflow imports IFIC tables
+once into DuckDB and screens receiver frequency overlaps with a sorted index.
+Run `python -m ific_guard --help` or the installed `ific-cache` command. See
+[the cache workflow guide](docs/scalable-ific.md) and
+[measured timings](docs/performance.md). The operational APIs and
+`python -m ific_guard.cli` admin commands continue to use the existing workflow.
+
 ## How to run it
 
 You need Docker with Compose. The first full sync with `IFIC_MIN_ISSUE=3074` downloads 20 issues in about 3 minutes, then screens them in about 8 minutes, and uses about 2.3 GB of disk.

@@ -1,2 +1,7 @@
 # Hashes in manifest.json cover these exact bytes, so git must not rewrite line endings.
 outputs/** text eol=lf
+# National reference generation and hashes must also be stable on Windows.
+data/national/** text eol=lf
+# Workbook/image bytes must never pass through text line-ending conversion.
+*.xlsx -text
+*.png -text
