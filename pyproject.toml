@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taivas-guard"
+version = "0.2.0"
+description = "Cached ITU IFIC ingestion and conservative frequency candidate screening"
+requires-python = ">=3.11"
+dependencies = ["duckdb>=1.4,<2", "numpy>=1.26,<3", "openpyxl>=3.1,<4"]
+
+[project.optional-dependencies]
+mdb = ["access-parser==0.0.6"]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+ific-guard = "ific_guard.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ific_guard*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
