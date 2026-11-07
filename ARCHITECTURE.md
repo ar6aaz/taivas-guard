@@ -39,7 +39,7 @@ flowchart TD
 
     S --> SA[Space adapter]
     T --> TA[Terrestrial adapter]
-    SA --> DB[(Normalised store<br/>DuckDB)]
+    SA --> DB[(Parsed IFIC tables<br/>read from the .mdb)]
     TA --> DB
     N --> DB
 
@@ -58,6 +58,8 @@ flowchart TD
 ```
 
 Deterministic components: adapters, store, filter, engines, ranking. LLM-assisted: explanation and drafting only.
+
+Automatic IFIC updates, email notifications and the FastAPI services around this pipeline are described in [docs/services-architecture.md](docs/services-architecture.md).
 
 ## 4. Components
 
@@ -86,7 +88,7 @@ class DomainAdapter:
 
 ### 4.2 Normalised store
 
-DuckDB, single file shipped with the repo. Full DDL in `schema.sql`.
+**Deferred.** The design was a DuckDB file with the DDL in `schema.sql`. It isn't connected: the adapters read the `.mdb` directly for each screening run, and operational data (issues, cases, events, notifications) lives in Postgres, or SQLite for local work. Reading the source each time was fast enough for one issue at a time (about 45 seconds for Space 3074 with the pfd rule) and needs no second copy of the data. Cross-issue analysis, such as trends over many issues, would be the reason to revisit this. `schema.sql` stays as the design for it.
 
 | Group | Tables |
 |---|---|
@@ -121,7 +123,7 @@ Tiered, cheapest first. Each rule that fires is recorded in `finding.trigger_rul
 
 Key national cases from M4:
 - **3.4–3.8 GHz** is MOBILE AND FIXED (5G) with no space-to-Earth allocation in Finland; FSS downlink starts at 3.8 GHz.
-- **17.7–19.7 GHz[118;1:3u** has dense fixed radio links shared with FSS downlink.
+- **17.7–19.7 GHz** has dense fixed radio links shared with FSS downlink.
 - **8.025–8.4 GHz** has fixed radio links and a newly primary EESS downlink.
 - **10.7–12.75 GHz** has no terrestrial use in Finland; 10.70–10.95 and 11.20–11.45 GHz are "not in use in Finland, but reserved".
 
@@ -145,9 +147,16 @@ margin = pfd − limit(δ)                        positive = exceeds
 - Evaluated on a ~0.5° grid over Finland plus the special-interest stations; the worst point is reported.
 - Northern Finland sees GSO satellites at low elevation and therefore the strictest part of the mask; the grid captures this.
 
-**NGSO:** propagate orbits in one-minute steps over a day, take the maximum pfd per point. If time is short, screen on frequency and inclination and flag for expert review. Article 22 epfd is out of scope.
+**NGSO**, implemented in `engines/pfd_ngso.py`. Each calculation gives two results of different kinds, kept apart in the output:
 
-**Validation:** hand-calculated unit tests, mask-edge tests at 5° and 25°, and a cross-check of a few IFIC 3074 networks against ITU's PFD GSO software.
+- **Upper-bound envelope.** For each arrival angle, it takes the shortest distance the notified perigee, apogee and inclination allow, for any node, phase, epoch or argument of perigee, and keeps the largest margin against the mask. It may describe a state the satellite never occupies, so a bound above the limit is `envelope_exceeds`, and is never reported as exceeding.
+- **One-day flight.** Two-body propagation with no J2, in one-minute steps over 24 hours, from the notified elements of one satellite per distinct orbit shape, tested at 90 Finnish points. It can miss the worst case. A positive margin here is the only non-GSO result reported as `exceeds`.
+
+For a notified orbit, the true worst margin lies between the two. Masks that need parameters X or Y, and orbits not referred to the Earth, are counted as not evaluated and sent for expert review.
+
+**Power.** Power in the reference bandwidth is `P_density + 10·log10(B_ref)`, capped at the row's `pep_max` because an emission can't put more than its total power there. The emission row used is the one with the most power after the cap, chosen separately for each mask's bandwidth.
+
+**Validation:** hand-calculated unit tests, mask-edge tests, real filings rechecked from raw rows (`tools/hand_check.py`, `outputs/hand-check.md`). The planned cross-check against ITU's PFD GSO software hasn't been done.
 
 ### 4.6 Field-strength engine (terrestrial)
 
@@ -184,7 +193,7 @@ Weights are configuration, visible in the UI and tunable by experts.
 
 | Output | Format | Purpose |
 |---|---|---|
-| Review UI | Streamlit | Ranked findings, drill-down (notice → M4 row → calculation → citations), accept / reject / edit |
+| Review UI | React, in `frontend/` | Ranked findings, drill-down (notice → M4 row → calculation → citations), accept / reject / edit |
 | Draft letters | .docx per administration | Expert-reviewed correspondence; can feed SpaceCom comments |
 | Evaluation files | CSV + JSON per issue | Separate submissions for Space IFIC 3074 and Terrestrial IFIC 3076 |
 | Trends panel | UI | New neighbouring-country activity by band, geography, station class, bandwidth |
@@ -210,27 +219,29 @@ Finding
 ## 6. Repository layout
 
 ```
-ific-guard/
-  adapters/    space.py  terrestrial.py
-  engines/     pfd.py    p1546.py
-  core/        store.py  filter.py  findings.py  ranking.py
-  llm/         retrieve.py  explain.py  draft.py
-  data/
-    national/  m4_allocations.csv  m4_satellite_filter.csv  special_interest.xlsx
-    masks/     limit_masks.json
-    refdocs/   RR, T/R 25-08, ECC decisions
-  tools/       parse_m4.py  build_filter.py
-  outputs/     ific_3074/  ific_3076/
-  tests/       test_pfd.py  test_p1546.py  test_filter.py
-  schema.sql
-  app.py       Streamlit UI
+ific_guard/
+  sync/        discovery, download, upload, cron
+  screening/   rules, pfd rule, scoring, space adapter, station loader, API
+  terrestrial/ adapter, diff, field-strength rule, neighbour trends
+  notifier/    digests and email backends
+  engines/     pfd.py  pfd_ngso.py  p1546.py
+  llm/         retrieval, template, guardrail, drafts
+  export.py    evaluation files
+data/
+  national/    M4 table from Traficom's API
+  masks/       limit masks, T/R 25-08 thresholds, Finnish boundary, land mask
+  refdocs/     retrieved regulation passages
+tools/         M4 and land-mask builders, hand check, P.1546 cross-check
+outputs/       ific_3074/  ific_3076/  hand-check.md
+frontend/      React review UI
+schema.sql     design for the deferred analytical store
 ```
 
 ## 7. Standard assumptions (shown on every finding)
 
 1. Free-space propagation for pfd (RR Art. 21).
 2. Angle of arrival equals geometric elevation; no refraction.
-3. Maximum (boresight) antenna gain towards Finland — worst case until GIMS contours are used.
+3. Maximum (boresight) antenna gain towards Finland: the worst case, which Traficom said to assume.
 4. Maximum notified power density.
 5. P.1546 without terrain data (`pathinfo = 0`); effective height from notified antenna height and site altitude.
 6. Receiver height and time percentage per T/R 25-08.
@@ -238,7 +249,6 @@ ific-guard/
 
 ## 8. Out of scope / later
 
-- GIMS beam contours (exact off-axis gain).
 - Article 22 epfd for NGSO.
 - Terrain-based P.1546 (`pathinfo = 1`).
 - Terrestrial services other than land mobile.

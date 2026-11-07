@@ -118,7 +118,7 @@ CREATE TABLE protected_station (       -- special-interest XLS, plus FIN earth s
     raw            JSON
 );
 
-CREATE[118;1:3u TABLE fin_satellite_band (      -- bands used by adm='FIN' networks in the SRS
+CREATE TABLE fin_satellite_band (      -- bands used by adm='FIN' networks in the SRS
     notice_key     TEXT,
     f_low_mhz      DOUBLE,
     f_high_mhz     DOUBLE,

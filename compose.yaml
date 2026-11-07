@@ -1,0 +1,52 @@
+# Ports bind to localhost: the API key is a minimal guard, not internet-facing security.
+x-service: &service
+  build: .
+  restart: unless-stopped
+  env_file: [{ path: .env, required: false }]
+  environment: &env
+    IFIC_DATABASE_URL: postgresql+psycopg://ific:${POSTGRES_PASSWORD:-ific-dev-only}@db/ific
+    IFIC_DATA_DIR: /app/data
+  volumes: [ific-data:/app/data]
+  depends_on:
+    migrate: { condition: service_completed_successfully }
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ific
+      POSTGRES_USER: ific
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ific-dev-only}
+    volumes: [pg-data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U ific -d ific]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  migrate:
+    <<: *service
+    restart: "no"
+    command: python -m ific_guard.cli init-db
+    depends_on:
+      db: { condition: service_healthy }
+
+  sync:
+    <<: *service
+    command: uvicorn ific_guard.sync.app:app --host 0.0.0.0 --port 8001
+    ports: ["127.0.0.1:8001:8001"]
+
+  screening:
+    <<: *service
+    command: uvicorn ific_guard.screening.app:app --host 0.0.0.0 --port 8002
+    ports: ["127.0.0.1:8002:8002"]
+
+  notifier:
+    <<: *service
+    command: uvicorn ific_guard.notifier.app:app --host 0.0.0.0 --port 8003
+    ports: ["127.0.0.1:8003:8003"]
+
+volumes:
+  ific-data:
+  pg-data:

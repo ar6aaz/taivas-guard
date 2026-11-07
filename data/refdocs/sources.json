@@ -1,0 +1,35 @@
+{
+  "note": "Short excerpts only. Fetch the full documents from the URLs below; they are not stored here.",
+  "obtained": [
+    {
+      "doc": "RR",
+      "edition": "2024, Vol. 1 (Articles)",
+      "url": "https://search.itu.int/history/HistoryDigitalCollectionDocLibrary/1.49.48.en.101.pdf",
+      "sha256": "040907a35846479b1f34ba628e35964dd4ce6d2b3fc05c2ff9b45e8ff215f5de"
+    },
+    {
+      "doc": "RR",
+      "edition": "2024, Vol. 2 (Appendices)",
+      "url": "https://search.itu.int/history/HistoryDigitalCollectionDocLibrary/1.49.48.en.102.pdf",
+      "sha256": "764d42e06ad8a6ee01a3c0cb609539555cb158eb6e054b966e066ed37686b6ac"
+    },
+    {
+      "doc": "T/R 25-08",
+      "edition": "6 June 2025",
+      "url": "https://docdb.cept.org/download/4789",
+      "sha256": "d6460dd8fcc618cf2164c96d3fd0ab3a2c45cd78265a3130f7aa516e2d35c52c"
+    },
+    {
+      "doc": "M4",
+      "edition": "4 AG/2026M, in force 31.3.2026",
+      "url": "https://www.finlex.fi/fi/viranomaiset/maarayskokoelmat/traficom-viestinta/2026/3",
+      "sha256": "ab79ee30cfe621b87d93808c56c7cc1da521f22f96db09bfe018a71697198304"
+    }
+  ],
+  "not_obtained": [
+    "ECC decisions named in ARCHITECTURE.md 4.8: not fetched; M4 excerpts name some of them, but their text is not indexed.",
+    "BR Special Sections (the printed comment expiry date): not available in the free IFIC database."
+  ],
+  "clauses_not_found": [],
+  "passages": 174
+}

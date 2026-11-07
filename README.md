@@ -1,160 +1,171 @@
-# Taivas Guard
+# IFIC Guard
 
-Cached ITU IFIC ingestion and conservative frequency candidate screening.
+IFIC Guard screens each ITU BR IFIC (space and terrestrial) for items that could matter to Finland, so a spectrum expert sees a short, ranked list with the evidence behind each item. Built for the Traficom challenge at Since AI 2026.
 
-The active Python package is `ific_guard`. The earlier scripts under
-`docs/research-discarded/spike/` are research snapshots with machine-specific
-paths; the new commands do not run those scripts.
+It raises **possible concerns for expert review**. It doesn't decide that a filing breaks a regulation, and it sends nothing to the ITU or to another administration.
 
-## Install
+## What it does
 
-Python 3.11 or newer:
+1. **Fetches issues.** A cron schedule downloads new Space and Terrestrial IFICs from the ITU. You can also upload an `.mdb` or a `.zip` containing one.
+2. **Screens them.** Deterministic rules run against the Finnish reference data. The results are the same for the same input, and no language model takes part.
+3. **Notifies.** One digest email per issue, listing new or changed cases.
+4. **Supports review.** A web UI shows each case with its evidence. The expert accepts or rejects it and can ask for a draft letter, which is never sent.
 
-```powershell
-python -m venv .venv
-.venv\Scripts\python.exe -m pip install -e ".[mdb,dev]"
+| Rule | Domain | Raises a case when |
+|---|---|---|
+| `fin-named-by-br` | Space | The ITU's own data names Finland on a filing |
+| `m4-no-space-to-earth` | Space | A satellite that can reach Finland transmits in a band where Regulation M4 gives no space-to-Earth allocation |
+| `station-rx-overlap` | Space | A transmission overlaps the RX or TX band of a Traficom special-interest station |
+| `pfd-gso-art21`, `pfd-gso-app5` | Space | Calculated GSO power flux-density against Article 21 limits and Appendix 5 coordination triggers |
+| `pfd-ngso-art21`, `pfd-ngso-app5` | Space | The same for non-GSO, as an upper bound and a one-day flight of the notified orbit |
+| `terrestrial-p1546` | Terrestrial | ITU-R P.1546-6 field strength on the Finnish boundary, for land-mobile notices from Russia, Sweden, Estonia, Norway and Denmark |
+| `terrestrial-not-calculated` | Terrestrial | A nearby notice can't be calculated, for example with no antenna height |
+
+## Cached analysis CLI
+
+For repeated offline analysis, the optional cache workflow imports IFIC tables
+once into DuckDB and screens receiver frequency overlaps with a sorted index.
+Run `python -m ific_guard --help` or the installed `ific-cache` command. See
+[the cache workflow guide](docs/scalable-ific.md) and
+[measured timings](docs/performance.md). The operational APIs and
+`python -m ific_guard.cli` admin commands continue to use the existing workflow.
+
+## How to run it
+
+You need Docker with Compose. The first full sync with `IFIC_MIN_ISSUE=3074` downloads 20 issues in about 3 minutes, then screens them in about 8 minutes, and uses about 2.3 GB of disk.
+
+```sh
+cp .env.example .env     # set IFIC_API_KEY: openssl rand -hex 32
+docker compose up --build
 ```
 
-On macOS/Linux, use `.venv/bin/python` instead.
+- Sync API: <http://localhost:8001>
+- Screening API: <http://localhost:8002>
+- Notifier API: <http://localhost:8003>
 
-## Import once and screen from the cache
+A new install syncs at once, then follows `IFIC_SYNC_CRON`. Keep `IFIC_EMAIL_BACKEND` at `console` or `file` unless you mean to send real email. The `file` backend writes to `data/outbox/` in the `ific-data` volume.
 
-Extract the public ITU downloads to local `.mdb` files first. Keep the original
-inputs unchanged for audit purposes. Downloads are not automated by the app.
+To load a file yourself:
 
-From PowerShell at the repository root:
-
-```powershell
-$ificPython = '.venv\Scripts\python.exe'
-$stationInput = 'outputs/finland-synthetic-20261107/finland_synthetic_stations_100000.xlsx'
-
-$national = & $ificPython -m ific_guard import-stations $stationInput | ConvertFrom-Json
-$space = & $ificPython -m ific_guard --verbose import-ific 'C:\path\ific3074.mdb' --domain space --issue 3074 | ConvertFrom-Json
-
-& $ificPython -m ific_guard screen --source $space.source_key --stations $national.source_key --output outputs/candidates3074.csv
-& $ificPython -m ific_guard export-parquet --source $space.source_key --output outputs/assignments3074.parquet
+```sh
+curl -X POST -H "X-API-Key: $IFIC_API_KEY" -F file=@ific3074.zip http://localhost:8001/issues/upload
 ```
 
-The default database is `.cache/ific.duckdb`. Put `--db PATH`, `--threads N`, or
-`--verbose` **before** the subcommand. Imports print JSON containing the
-`source_key`, `cache_hit`, row counts and elapsed time; progress goes to stderr.
-Analysis commands open the completed cache read-only, allowing multiple read-only
-processes. Coordinate imports separately: DuckDB does not support concurrent
-independent writer processes or readers in other processes while a writer holds
-the database open.
+For the review UI (the services must be running):
 
-Running an import again hashes the file and reuses the stored rows. MDB decoding,
-workbook parsing and normalization are skipped on a cache hit. Cache keys include
-the source SHA-256, domain, issue number, reader version, importer format version
-and input options. Import and normalization commit atomically. Failed imports
-leave no partial cache entry.
-
-For larger national datasets, import normalized CSV with columns `station_id`,
-`f_low_mhz`, `f_high_mhz`, and optional `latitude_deg`, `longitude_deg`. The
-challenge workbook reader uses its English headers on row 11 and data from row
-13. It supports explicit Hz/kHz/MHz/GHz units and decimal commas. Raw rows and
-their source row numbers remain in the database. Missing bandwidth is marked for
-review, never replaced with zero. Broadcast rows explicitly lacking RX are
-classified as transmit-only.
-
-## Candidate results and matching receiver IDs
-
-`screen` writes one row per candidate assignment, not every assignment/station
-pair. `matched_assignment_count` counts receiver **rows**, including separate
-assignments that share a station ID. Zero-gap screening uses strict interval
-overlap; touching edges do not match. `--gap-mhz 0.025` also includes assignments
-within exactly 25 kHz of the filing range.
-
-Retrieve station identities only for a selected candidate:
-
-```powershell
-& $ificPython -m ific_guard matches --source $space.source_key --stations $national.source_key --assignment 'NOTICE_ID:GROUP_ID' --output outputs/matching-receivers.csv
+```sh
+cd frontend && npm install && npm run dev    # http://localhost:5173
 ```
 
-Space assignment IDs combine verbatim notice and group IDs. Terrestrial IDs use
-`terrakey`. Individual matched rows also include their original workbook/CSV row
-number so duplicate station IDs remain distinguishable.
+To work on the Python code, with Python 3.11 to 3.13:
 
-Space screening includes transmitting GSO/NGSO groups. It retains groups listed
-for Finland even without station overlap or GSO visibility. Missing frequencies
-or relevant metadata produce review reasons. Invalid or missing national receiver
-frequencies prevent a healthy zero-result interpretation: otherwise eligible
-filings remain review candidates. GSO visibility uses a deliberately enlarged
-rectangle enclosing Finland; unknown longitude is retained for review. NGSO
-geometry is not used as an exclusion test. Terrestrial screening covers foreign
-land-mobile classes FB/ML/FP/FL. Optional `--max-distance-km N` rejects stations
-whose minimum distance to an enclosing Finland rectangle already exceeds N.
-This is a conservative lower bound, not an exact border distance or regulatory
-threshold; no radius is assumed by default. Unknown coordinates remain for review.
-CSV rows retain the gap, radius and screening version for reproducibility.
-Explicit suppressed assignments are excluded from
-new interference candidates unless retained through the Finland-listed rule.
-
-These are **screening candidates, not interference or compliance findings**.
-This version does not implement PFD/P.1546 calculations, M4/FIN satellite-band
-screening, regulatory limit decisions, or correspondence generation. Those must
-consume the narrowed candidate set in a later analysis stage. DuckDB can use
-multiple threads for queries; this version does not introduce a worker pool for
-RF calculations that do not yet exist in the active package.
-
-## Compare publications
-
-Import another issue and pass both returned source keys:
-
-```powershell
-& $ificPython -m ific_guard changes --previous OLD_SOURCE_KEY --current NEW_SOURCE_KEY --output outputs/publication-changes.csv
+```sh
+uv sync
+uv run pytest
+IFIC_SHARED_DATA=/path/to/ific-files uv run pytest    # adds tests that read the real issues
 ```
 
-IFIC publications are updates, not complete inventory snapshots. In publication mode explicit
-ADD/MODIFY/SUPPRESS or A/M/S/W actions take precedence. Absent rows are labelled
-`not_republished`, not withdrawn. Previously unseen rows without an explicit
-action are labelled `published`, not assumed to be newly operational. Only use
-`--complete-snapshots` when both inputs really are complete cumulative snapshots.
+To export one issue for evaluation:
 
-Space fingerprints include all imported notice/group/beam/emission/orbit and
-coordination rows linked to a notice. A changed notice conservatively invalidates
-its groups, including emission-only changes. Terrestrial fingerprints include
-the assignment, linked location and antenna rows. Re-evaluate results when
-national data, analysis rules or parameters change too; a publication diff alone
-does not establish that an old calculation remains valid.
-
-## Performance and checks
-
-```powershell
-& $ificPython -m pytest -q
-& $ificPython tools/benchmark_overlap.py --stations 100000 --groups 10000
-& $ificPython tools/benchmark_pipeline.py --stations 100000 --groups 10000
+```sh
+python -m ific_guard.cli export --domain space --issue 3074 --out outputs/ific_3074
+python -m ific_guard.cli export --domain terrestrial --issue 3076 --out outputs/ific_3076
 ```
 
-The overlap benchmark compares the production sorted-boundary index against the
-original full-scan expression and requires identical counts. Sorting costs
-O(S log S), queries O(G log S), and index memory is O(S). Screening fetches IFIC
-groups in batches and keeps only one national frequency index per open store.
-Detailed station identities are queried and streamed on demand.
+[docs/demo.md](docs/demo.md) is the rehearsed demo script.
 
-The pipeline benchmark uses synthetic decoded tables through the actual store
-interface. It checks cache reuse without invoking the decoder and identical
-repeated results. It **does not measure real MDB decoding**.
+## Inputs
 
-The first MDB import still depends on `access-parser`, which materializes one
-table at a time and has documented format limitations. This is not a fully
-streaming MDB decoder. Only selected screening-relevant tables are imported;
-all decoded rows in those tables are retained in `ific_raw`. Typed assignments
-live in `ific_assignment`, national rows in `ific_station`, and manifests in
-`ific_source`. Original MDB files are not copied into the cache. Bump
-`FORMAT_VERSION` when reader/normalization semantics change.
+| Input | Source | Where |
+|---|---|---|
+| Space IFIC `.mdb` | ITU, or upload | Downloaded at run time, not in the repository |
+| Terrestrial IFIC `.mdb` | ITU, or upload | Downloaded at run time, not in the repository |
+| Frequency allocation table (Regulation M4) | Traficom open-data API | `data/national/` |
+| Special-interest stations (synthetic) | Traficom | `docs/challenge/` |
+| Article 21 and Appendix 5 limit masks | ITU Radio Regulations | `data/masks/limit_masks.json`, with a citation on each row |
+| T/R 25-08 indicative thresholds | CEPT | `data/masks/field_strength.json` |
+| Finnish boundary and land mask | Natural Earth | `data/masks/` |
 
-Real public Space IFIC 3074 and Terrestrial IFIC 3076 MDBs were also exercised.
-Space import stored 1,024,515 decoded rows and normalized 34,365 groups. On the
-development machine, the first uncached import took 110 seconds, a cached import
-0.81 seconds and candidate screening against 100,000 national records 0.59 seconds.
-All 7,971 candidate overlap counts matched the original brute-force expression,
-and all 220 Finland-listed groups were preserved. See `docs/performance.md` for
-stage definitions, terrestrial measurements and limits of these numbers.
+## Outputs
 
-## Existing material
+| Output | What it is |
+|---|---|
+| [`outputs/ific_3074/`](outputs/ific_3074) | Space 3074: 182 cases (30 high, 123 medium, 29 low) |
+| [`outputs/ific_3076/`](outputs/ific_3076) | Terrestrial 3076: 29 cases (1 high, 22 medium, 6 low) |
+| [`outputs/hand-check.md`](outputs/hand-check.md) | Independent recheck of a sample, with the false positives and misses we could measure |
+| [`outputs/neighbour-trends.md`](outputs/neighbour-trends.md) | Counts of neighbouring notices across Terrestrial 3074-3083 |
+| Review cases | Stored in the database, served by the Screening API and the UI |
+| Digest email | One per issue |
+| Draft letter | `GET /cases/{id}/draft`; marked as a draft and never sent |
 
-`ARCHITECTURE.md` and `schema.sql` describe the broader proposed system. The active
-cache owns its `ific_*` tables and does not execute that draft schema. The
-synthetic workbook and its rebuild scripts are documented in
-`tools/synthetic-data/README.md`.
+Each export folder holds `cases.csv`, `cases.json` (with the full evidence and assumptions), `manifest.json` (source hash, code hashes, configuration) and `verification.md`. Terrestrial also has `funnel.json`, which shows how many notices each filter removed. See [`outputs/README.md`](outputs/README.md).
+
+Traficom accepts this: they prefer Xls/csv or doc/pdf for quick evaluation, accept any open machine-readable format, prefer JSON over MDB, and named no mandatory fields.
+
+## What was verified
+
+From an empty database with `docker compose up --build`:
+
+- The scheduled first sync finished `ok`, with all 20 issues (Space and Terrestrial 3074-3083) screened and a digest written for each. No real email was sent.
+- A second empty database, loaded by upload (`ific3074.zip`, `brific3075.mdb`, `brific3076.mdb`), gave the same cases as the download. The only differences were the source URL, and the hash and size of whichever file was uploaded.
+- A demo was rehearsed from a clean start, including a draft for each of the 224 cases in 3083. This ran just before the TX protection was merged, which changes station links but not the steps.
+
+The rehearsals found faults that the unit tests had not, all now fixed:
+
+- every terrestrial issue failed in the container
+- one bad date cell lost all of Space 3077
+- draft letters crashed on most pfd cases
+- letters described an upper bound as an exceedance
+
+The hand check recomputed 13 pfd results from raw rows with no difference above 0.0001 dB. All 21 P.1546 values match the upstream reference code in Octave to within 0.006 dB. It also found no in-scope misses in its sweeps. See [`outputs/hand-check.md`](outputs/hand-check.md).
+
+**Accuracy against expert judgement has not been measured.** No result has been compared with Traficom's own assessment.
+
+## Known limitations
+
+### False positives
+
+- **Worst-case gain.** Every pfd result applies the maximum notified gain towards Finland, as Traficom said to assume (beams "are not relevant", Discord, 2026-11-07). So "exceeds" always means under worst-case assumptions. `s_beam` holds no boresight position for any of the 2,304 rows in 3074, so we can't say how many of the high pfd cases a real beam would reach.
+- **Frequency-only rules.** `m4-no-space-to-earth` and `station-rx-overlap` ignore power, antenna direction and station location. A slight edge overlap counts. They over-flag by design. Protecting TX as well as RX, as Traficom asked, adds no cases but 75% more station links on 3074.
+- **Filings around the Moon.** In 3074, six networks (LUNAR-R1 to R5, USASAT-MK1) have an orbit referred to the Moon. They still get M4 and station cases as if they were Earth satellites. The pfd rule sets them aside as not evaluated.
+- **Synthetic stations.** Traficom's station list is synthetic, so station cases show that the rule works, not real interference.
+
+### Things not evaluated
+
+- **5,429 non-GSO records in 3074 have no calculation** because their masks need parameters X or Y, which the IFIC data can't supply (5,398 and 31). They are counted, and shown for expert review.
+- **Only API/A and CR/C space filings are screened.** Notification-stage (`N`) filings aren't, which includes three 3074 notices naming Finland: 125500060, 125500061 and 125500066. AP30, AP30A and AP30B aren't screened, and 3074 has no rows to test them with.
+- **Only Space database version 10 screens.** Issues in versions 8, 7 and 5 are rejected with a clear error, so "all existing issues" isn't met for older issues. Space discovery walks back to 1998, and 3074-3083 are all version 10.
+- **Terrestrial covers land mobile only.** Other services and terrain (`pathinfo = 1`) aren't calculated.
+- **Article 22 epfd isn't calculated.** Neither is the sum of several satellites at one point.
+- **Finnish satellites aren't protected.** The brief also asks about systems that could interfere with Finnish satellites, and no rule does this yet.
+- **No space-side trends.** `outputs/neighbour-trends.md` covers terrestrial only.
+
+### Assumptions an expert should check
+
+- **`pwr_ds_max` in dBW/Hz** rests on a secondary note. The primary ITU Space Preface could not be retrieved. Each pfd case states this.
+- **`pep_max` caps power in the reference bandwidth**, treated as dBW. In 3074 it lowers the worst margin of 74 of 1,234 records and raises none.
+- **Inferred field meanings.** `orbit_lnk`, `long_asc`, `phase_ang`, `fxm_coord`, `action`, `target`, `pwr_eiv` and `pwr_xyz` are inferred from the data, because the ITU ReadMe could not be read.
+- **Non-GSO flights** are two-body with no J2, over one day, for one satellite per orbit shape from an assumed start. They can miss the worst case. The upper bound covers the notified altitudes for any node, phase or epoch, but it may describe a state the satellite never occupies.
+- **T/R 25-08 thresholds are indicative, and all 15 comparisons in 3076 are provisional.** The document doesn't say whether they apply on the Russian border, and no bilateral agreement was checked. Above 470 MHz the case currently says no criterion is available. Traficom has since said to apply the T/R 25-08 criteria for above 400 MHz there, which is ticket 20.
+- **The 300 km terrestrial screen and the Finnish border polyline are engineering approximations.** On 3076 the polyline dropped nothing within 300 km of the Natural Earth boundary and kept 7 notices at about 306 km.
+- **Draft letters say "limit" for every comparison**, including Appendix 5 triggers and T/R 25-08 thresholds. An expert should correct the term when editing a draft.
+- **Comment deadlines are estimates**: publication date plus four months.
+
+### Data and operations
+
+- **Article 11 totals don't reconcile with notice rows**: 106 unreconciled in 3075 and 29 in 3076.
+- **Invalid dates read as null.** Space 3077 has 22 such cells in `grp`; each logs a warning.
+- **Severity scoring.** The configured boosts for stations and passive bands don't fire on the evaluated issues, so they don't affect ranking there.
+- **The MDB parser `access-parser` is a young library**, and row counts haven't been compared with `mdbtools`.
+- **A first sync sends one digest per issue**, so a low `IFIC_MIN_ISSUE` sends a burst of them.
+- **Not tested:** real SMTP (mocked only), the language-model path with a real model, and ITU's own PFD software as a cross-check.
+- **Security is minimal.** The API key is a basic guard and the ports bind to localhost, so this isn't ready to face the internet.
+- **Schema changes** use `create_all`, with no migrations.
+- **The normalised DuckDB store was deferred.** Rules read the `.mdb` directly. See [ARCHITECTURE.md](ARCHITECTURE.md) section 4.2.
+
+## More documentation
+
+- [ARCHITECTURE.md](ARCHITECTURE.md): pipeline, engines and principles
+- [docs/services-architecture.md](docs/services-architecture.md): services, data flow and current status
+- [docs/demo.md](docs/demo.md): demo script
+- [frontend/README.md](frontend/README.md): the review UI

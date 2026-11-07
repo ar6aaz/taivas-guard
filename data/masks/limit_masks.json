@@ -1,0 +1,1860 @@
+{
+ "description": "Power flux-density limits and coordination thresholds, as cited data. Only rows that can apply to Finland (Region 1) are included.",
+ "applicability": {
+  "pfd_art21": "Compliance limit. RR No. 21.16: free-space propagation, for bands shared with equal rights with the fixed or mobile service, unless otherwise stated. No. 21.17 allows excess on a consenting country's territory.",
+  "pfd_app5": "Coordination trigger under RR No. 9.14. Crossing one means coordination may be needed, not that a filing breaks a limit."
+ },
+ "sources": {
+  "RR": [
+   {
+    "doc": "ITU Radio Regulations, Edition of 2024, Volume 1",
+    "url": "https://search.itu.int/history/HistoryDigitalCollectionDocLibrary/1.49.48.en.101.pdf",
+    "sha256": "040907a35846479b1f34ba628e35964dd4ce6d2b3fc05c2ff9b45e8ff215f5de"
+   },
+   {
+    "doc": "ITU Radio Regulations, Edition of 2024, Volume 2",
+    "url": "https://search.itu.int/history/HistoryDigitalCollectionDocLibrary/1.49.48.en.102.pdf",
+    "sha256": "764d42e06ad8a6ee01a3c0cb609539555cb158eb6e054b966e066ed37686b6ac"
+   }
+  ]
+ },
+ "transcription": "Read by eye from page images of the PDFs above (Table 21-4: printed pp. 287-290, notes pp. 291-294; Table 5-2: printed pp. 165-166).",
+ "masks": [
+  {
+   "mask_id": "art21-1525-1530",
+   "kind": "pfd_art21",
+   "f_low_mhz": 1525,
+   "f_high_mhz": 1530,
+   "services": [
+    "Meteorological-satellite (s-E)",
+    "Space research (s-E, s-s)",
+    "Space operation (s-E, s-s)",
+    "Earth exploration-satellite (s-E, s-s)"
+   ],
+   "orbit_type": null,
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -154
+    ],
+    [
+     5,
+     -154
+    ],
+    [
+     25,
+     -144.0
+    ],
+    [
+     90,
+     -144.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 287,
+    "footnotes": [
+     "7 (21.16.1)",
+     "9 (21.16.3)"
+    ]
+   },
+   "note": "This row is listed for Region 1 and Region 3. Finland is in Region 1."
+  },
+  {
+   "mask_id": "art21-2025-2110",
+   "kind": "pfd_art21",
+   "f_low_mhz": 2025,
+   "f_high_mhz": 2110,
+   "services": [
+    "Meteorological-satellite (s-E)",
+    "Space research (s-E, s-s)",
+    "Space operation (s-E, s-s)",
+    "Earth exploration-satellite (s-E, s-s)"
+   ],
+   "orbit_type": null,
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -154
+    ],
+    [
+     5,
+     -154
+    ],
+    [
+     25,
+     -144.0
+    ],
+    [
+     90,
+     -144.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 287,
+    "footnotes": [
+     "9 (21.16.3)"
+    ]
+   }
+  },
+  {
+   "mask_id": "art21-2200-2300",
+   "kind": "pfd_art21",
+   "f_low_mhz": 2200,
+   "f_high_mhz": 2300,
+   "services": [
+    "Meteorological-satellite (s-E)",
+    "Space research (s-E, s-s)",
+    "Space operation (s-E, s-s)",
+    "Earth exploration-satellite (s-E, s-s)"
+   ],
+   "orbit_type": null,
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -154
+    ],
+    [
+     5,
+     -154
+    ],
+    [
+     25,
+     -144.0
+    ],
+    [
+     90,
+     -144.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 287,
+    "footnotes": [
+     "9 (21.16.3)"
+    ]
+   }
+  },
+  {
+   "mask_id": "art21-2500-2690",
+   "kind": "pfd_art21",
+   "f_low_mhz": 2500,
+   "f_high_mhz": 2690,
+   "services": [
+    "Fixed-satellite",
+    "Broadcasting-satellite",
+    "Radiodetermination-satellite",
+    "Mobile-satellite"
+   ],
+   "orbit_type": null,
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -136
+    ],
+    [
+     5,
+     -136
+    ],
+    [
+     25,
+     -125.0
+    ],
+    [
+     90,
+     -125.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 287,
+    "footnotes": [
+     "10 (21.16.3A)"
+    ]
+   },
+   "note": "Resolution 903 (Rev.WRC-19) also applies. The table lists sub-bands for particular services, including 2520-2670 MHz and Nos. 5.403 and 5.404; check the service against that row."
+  },
+  {
+   "mask_id": "art21-3400-4200-gso",
+   "kind": "pfd_art21",
+   "f_low_mhz": 3400,
+   "f_high_mhz": 4200,
+   "services": [
+    "Fixed-satellite (s-E)"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -152
+    ],
+    [
+     5,
+     -152
+    ],
+    [
+     25,
+     -142.0
+    ],
+    [
+     90,
+     -142.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 287,
+    "footnotes": []
+   }
+  },
+  {
+   "mask_id": "art21-3400-4200-ngso",
+   "kind": "pfd_art21",
+   "f_low_mhz": 3400,
+   "f_high_mhz": 4200,
+   "services": [
+    "Fixed-satellite (s-E)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -138
+    ],
+    [
+     5,
+     -138
+    ],
+    [
+     25,
+     -126
+    ],
+    [
+     90,
+     -126
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 287,
+    "footnotes": [
+     "22 (21.16.15)",
+     "23 (21.16.16)"
+    ]
+   },
+   "parameter": {
+    "name": "Y",
+    "weights": [
+     [
+      0,
+      1
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      25,
+      0
+     ],
+     [
+      90,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "mask_id": "art21-8025-8500",
+   "kind": "pfd_art21",
+   "f_low_mhz": 8025,
+   "f_high_mhz": 8500,
+   "services": [
+    "Earth exploration-satellite (s-E)",
+    "Space research (s-E)"
+   ],
+   "orbit_type": null,
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -150
+    ],
+    [
+     5,
+     -150
+    ],
+    [
+     25,
+     -140.0
+    ],
+    [
+     90,
+     -140.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 288,
+    "footnotes": []
+   }
+  },
+  {
+   "mask_id": "art21-10700-11700-gso",
+   "kind": "pfd_art21",
+   "f_low_mhz": 10700,
+   "f_high_mhz": 11700,
+   "services": [
+    "Fixed-satellite (s-E)"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -150
+    ],
+    [
+     5,
+     -150
+    ],
+    [
+     25,
+     -140.0
+    ],
+    [
+     90,
+     -140.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 288,
+    "footnotes": []
+   }
+  },
+  {
+   "mask_id": "art21-10700-11700-ngso",
+   "kind": "pfd_art21",
+   "f_low_mhz": 10700,
+   "f_high_mhz": 11700,
+   "services": [
+    "Fixed-satellite (s-E)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -126
+    ],
+    [
+     5,
+     -126
+    ],
+    [
+     25,
+     -116.0
+    ],
+    [
+     90,
+     -116.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 288,
+    "footnotes": [
+     "25 (21.16.18)"
+    ]
+   },
+   "applies_when": {
+    "not_highly_inclined": true
+   }
+  },
+  {
+   "mask_id": "art21-10700-12500-ngso-heo",
+   "kind": "pfd_art21",
+   "f_low_mhz": 10700,
+   "f_high_mhz": 12500,
+   "services": [
+    "Fixed-satellite (s-E)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -129
+    ],
+    [
+     5,
+     -129
+    ],
+    [
+     25,
+     -114.0
+    ],
+    [
+     90,
+     -114.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 288,
+    "footnotes": [
+     "23 (21.16.16)",
+     "24 (21.16.17)"
+    ]
+   },
+   "applies_when": {
+    "inclination_deg_min": 35,
+    "inclination_deg_max": 145,
+    "apogee_km_gt": 18000
+   },
+   "note": "The row covers 10.7-11.7 GHz and, for Region 1, 11.7-12.5 GHz."
+  },
+  {
+   "mask_id": "art21-11700-12500-ngso",
+   "kind": "pfd_art21",
+   "f_low_mhz": 11700,
+   "f_high_mhz": 12500,
+   "services": [
+    "Fixed-satellite (s-E)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -124
+    ],
+    [
+     5,
+     -124
+    ],
+    [
+     25,
+     -114.0
+    ],
+    [
+     90,
+     -114.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 289,
+    "footnotes": [
+     "25 (21.16.18)"
+    ]
+   },
+   "applies_when": {
+    "not_highly_inclined": true
+   },
+   "note": "Row for Region 1 at 11.7-12.5 GHz."
+  },
+  {
+   "mask_id": "art21-17700-19300",
+   "kind": "pfd_art21",
+   "f_low_mhz": 17700,
+   "f_high_mhz": 19300,
+   "services": [
+    "Fixed-satellite (s-E) GSO",
+    "Inter-satellite",
+    "Meteorological-satellite (s-E)"
+   ],
+   "orbit_type": null,
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -115
+    ],
+    [
+     5,
+     -115
+    ],
+    [
+     25,
+     -105.0
+    ],
+    [
+     90,
+     -105.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 289,
+    "footnotes": [
+     "7 (21.16.1)",
+     "8 (21.16.2)",
+     "14 (21.16.6A)",
+     "15 (21.16.6B)"
+    ]
+   },
+   "note": "Footnote 14: applies to meteorological-satellite space stations and GSO fixed-satellite and inter-satellite stations. Also to non-GSO fixed-satellite at 18.8-19.3 GHz with information received by 17 November 1995 or in operation by then. Footnote 15: also to highly inclined orbits under Resolution 147 (WRC-07). Footnote 8 adds a separate limit at 18.6-18.8 GHz that is not evaluated here."
+  },
+  {
+   "mask_id": "art21-17700-19300-ngso-x",
+   "kind": "pfd_art21",
+   "f_low_mhz": 17700,
+   "f_high_mhz": 19300,
+   "services": [
+    "Fixed-satellite (s-E) non-GSO"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -115
+    ],
+    [
+     5,
+     -115
+    ],
+    [
+     25,
+     -105.0
+    ],
+    [
+     90,
+     -105.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 289,
+    "footnotes": [
+     "7 (21.16.1)",
+     "8 (21.16.2)",
+     "13 (21.16.6)"
+    ]
+   },
+   "parameter": {
+    "name": "X",
+    "weights": [
+     [
+      0,
+      1
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      25,
+      0
+     ],
+     [
+      90,
+      0
+     ]
+    ]
+   },
+   "note": "X depends on constellation size. Footnote 13 sets conditions at 18.8-19.3 GHz, for information received since 17 November 1995, and also covers the inter-satellite service there. Footnote 8 adds a separate limit at 18.6-18.8 GHz that is not evaluated here."
+  },
+  {
+   "mask_id": "art21-17700-19300-heo",
+   "kind": "pfd_art21",
+   "f_low_mhz": 17700,
+   "f_high_mhz": 19300,
+   "services": [
+    "Fixed-satellite (s-E)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -120
+    ],
+    [
+     3,
+     -120
+    ],
+    [
+     12,
+     -112
+    ],
+    [
+     25,
+     -105
+    ],
+    [
+     90,
+     -105
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 289,
+    "footnotes": [
+     "7 (21.16.1)",
+     "8 (21.16.2)",
+     "16 (21.16.6C)"
+    ]
+   },
+   "applies_when": {
+    "inclination_deg_min": 35,
+    "inclination_deg_max": 145,
+    "apogee_km_gt": 18000
+   },
+   "note": "Footnote 16: fixed-satellite highly inclined orbits (apogee above 18 000 km, inclination 35-145 degrees) not under Resolution 147, with information received after 16 November 2007. The footnote also covers the inter-satellite service, which this row does not select."
+  },
+  {
+   "mask_id": "art21-19300-19700",
+   "kind": "pfd_art21",
+   "f_low_mhz": 19300,
+   "f_high_mhz": 19700,
+   "services": [
+    "Fixed-satellite (s-E)",
+    "Broadcasting-satellite",
+    "Earth exploration-satellite (s-E)",
+    "Inter-satellite",
+    "Space research (s-E)"
+   ],
+   "orbit_type": null,
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -115
+    ],
+    [
+     5,
+     -115
+    ],
+    [
+     25,
+     -105.0
+    ],
+    [
+     90,
+     -105.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 290,
+    "footnotes": [
+     "15 (21.16.6B)"
+    ]
+   }
+  },
+  {
+   "mask_id": "art21-19300-19700-heo",
+   "kind": "pfd_art21",
+   "f_low_mhz": 19300,
+   "f_high_mhz": 19700,
+   "services": [
+    "Fixed-satellite (s-E)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -120
+    ],
+    [
+     3,
+     -120
+    ],
+    [
+     12,
+     -112
+    ],
+    [
+     25,
+     -105
+    ],
+    [
+     90,
+     -105
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Art. 21, No. 21.16, Table 21-4 (Rev.WRC-23)",
+    "printed_page": 289,
+    "footnotes": [
+     "16 (21.16.6C)"
+    ]
+   },
+   "applies_when": {
+    "inclination_deg_min": 35,
+    "inclination_deg_max": 145,
+    "apogee_km_gt": 18000
+   },
+   "note": "Footnote 16: fixed-satellite highly inclined orbits not under Resolution 147, with information received after 16 November 2007. The inter-satellite service is not selected by this row."
+  },
+  {
+   "mask_id": "app5-1518-1525-gso-analogue-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1518,
+   "f_high_mhz": 1525,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -146
+    ],
+    [
+     5,
+     -146
+    ],
+    [
+     25,
+     -136.0
+    ],
+    [
+     90,
+     -136.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-1518-1525-gso-analogue-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1518,
+   "f_high_mhz": 1525,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-1518-1525-gso-other",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1518,
+   "f_high_mhz": 1525,
+   "services": [
+    "All other cases"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 4 (exceptions for Japan, No. 5.342 administrations, New Zealand)",
+     "NOTE 8 (Australia)"
+    ]
+   }
+  },
+  {
+   "mask_id": "app5-1518-1525-ngso-analogue-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1518,
+   "f_high_mhz": 1525,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -146
+    ],
+    [
+     5,
+     -146
+    ],
+    [
+     25,
+     -136.0
+    ],
+    [
+     90,
+     -136.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-1518-1525-ngso-analogue-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1518,
+   "f_high_mhz": 1525,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-1518-1525-ngso-other",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1518,
+   "f_high_mhz": 1525,
+   "services": [
+    "All other cases"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 4 (exceptions for Japan, No. 5.342 administrations, New Zealand)",
+     "NOTE 8 (Australia)"
+    ]
+   },
+   "note": "Non-GSO: Table 5-2 also gives a 25% FDP threshold in 1 MHz, for digital FS systems (NOTE 1), which is not evaluated here."
+  },
+  {
+   "mask_id": "app5-1525-1530-gso-analogue-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1525,
+   "f_high_mhz": 1530,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -146
+    ],
+    [
+     5,
+     -146
+    ],
+    [
+     25,
+     -136.0
+    ],
+    [
+     90,
+     -136.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-1525-1530-gso-analogue-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1525,
+   "f_high_mhz": 1530,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-1525-1530-gso-other",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1525,
+   "f_high_mhz": 1530,
+   "services": [
+    "All other cases"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2"
+    ]
+   }
+  },
+  {
+   "mask_id": "app5-1525-1530-ngso-analogue-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1525,
+   "f_high_mhz": 1530,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -146
+    ],
+    [
+     5,
+     -146
+    ],
+    [
+     25,
+     -136.0
+    ],
+    [
+     90,
+     -136.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-1525-1530-ngso-analogue-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1525,
+   "f_high_mhz": 1530,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-1525-1530-ngso-other",
+   "kind": "pfd_app5",
+   "f_low_mhz": 1525,
+   "f_high_mhz": 1530,
+   "services": [
+    "All other cases"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2"
+    ]
+   },
+   "note": "Non-GSO: Table 5-2 also gives a 25% FDP threshold in 1 MHz, for digital FS systems (NOTE 1), which is not evaluated here."
+  },
+  {
+   "mask_id": "app5-2160-2200-gso-analogue-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2160,
+   "f_high_mhz": 2200,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -146
+    ],
+    [
+     5,
+     -146
+    ],
+    [
+     25,
+     -136.0
+    ],
+    [
+     90,
+     -136.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 3",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-2160-2200-gso-analogue-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2160,
+   "f_high_mhz": 2200,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 3",
+     "NOTE 5"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-2160-2200-gso-other",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2160,
+   "f_high_mhz": 2200,
+   "services": [
+    "All other cases"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 3"
+    ]
+   },
+   "note": "NOTE 3: thresholds at 2160-2170 MHz (Region 2) and 2170-2200 MHz (all Regions) do not apply to protect other terrestrial services for IMT systems in these conditions."
+  },
+  {
+   "mask_id": "app5-2160-2200-ngso-analogue-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2160,
+   "f_high_mhz": 2200,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -141
+    ],
+    [
+     5,
+     -141
+    ],
+    [
+     25,
+     -131.0
+    ],
+    [
+     90,
+     -131.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 3",
+     "NOTE 5",
+     "NOTE 6"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-2160-2200-ngso-analogue-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2160,
+   "f_high_mhz": 2200,
+   "services": [
+    "Analogue FS telephony"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -123
+    ],
+    [
+     5,
+     -123
+    ],
+    [
+     25,
+     -113.0
+    ],
+    [
+     90,
+     -113.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 3",
+     "NOTE 5",
+     "NOTE 6"
+    ]
+   },
+   "note": "Analogue telephony: further coordination is needed only when both reference bandwidths reach the threshold (NOTE 5)."
+  },
+  {
+   "mask_id": "app5-2160-2200-ngso-other",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2160,
+   "f_high_mhz": 2200,
+   "services": [
+    "All other cases"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -123
+    ],
+    [
+     5,
+     -123
+    ],
+    [
+     25,
+     -113.0
+    ],
+    [
+     90,
+     -113.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 3",
+     "NOTE 6"
+    ]
+   },
+   "note": "NOTE 3: thresholds at 2160-2170 MHz (Region 2) and 2170-2200 MHz (all Regions) do not apply to protect other terrestrial services for IMT systems in these conditions."
+  },
+  {
+   "mask_id": "app5-2483-2500-mss-gso-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2483.5,
+   "f_high_mhz": 2500,
+   "services": [
+    "All cases (mobile-satellite service)"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -146
+    ],
+    [
+     5,
+     -146
+    ],
+    [
+     25,
+     -136.0
+    ],
+    [
+     90,
+     -136.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2"
+    ]
+   }
+  },
+  {
+   "mask_id": "app5-2483-2500-mss-gso-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2483.5,
+   "f_high_mhz": 2500,
+   "services": [
+    "All cases (mobile-satellite service)"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     5,
+     -128
+    ],
+    [
+     25,
+     -118.0
+    ],
+    [
+     90,
+     -118.0
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2"
+    ]
+   }
+  },
+  {
+   "mask_id": "app5-2483-2500-mss-ngso-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2483.5,
+   "f_high_mhz": 2500,
+   "services": [
+    "All cases (mobile-satellite service)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -142.5
+    ],
+    [
+     5,
+     -142.5
+    ],
+    [
+     25,
+     -129.5
+    ],
+    [
+     90,
+     -129.5
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 9"
+    ]
+   },
+   "note": "NOTE 9 lists Finland, so these values replace the -144 and -126 in the table body."
+  },
+  {
+   "mask_id": "app5-2483-2500-mss-ngso-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2483.5,
+   "f_high_mhz": 2500,
+   "services": [
+    "All cases (mobile-satellite service)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -124.5
+    ],
+    [
+     5,
+     -124.5
+    ],
+    [
+     25,
+     -111.5
+    ],
+    [
+     90,
+     -111.5
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 2",
+     "NOTE 9"
+    ]
+   },
+   "note": "NOTE 9 lists Finland, so these values replace the -144 and -126 in the table body."
+  },
+  {
+   "mask_id": "app5-2483-2500-rdss-gso-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2483.5,
+   "f_high_mhz": 2500,
+   "services": [
+    "All cases except radiolocation in No. 5.398A countries (RDSS)"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -152
+    ],
+    [
+     90,
+     -152
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 10"
+    ]
+   },
+   "note": "Table 5-2 shows no slope for this row, so the value is held flat at all angles. This is our reading, not stated in the table."
+  },
+  {
+   "mask_id": "app5-2483-2500-rdss-gso-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2483.5,
+   "f_high_mhz": 2500,
+   "services": [
+    "All cases except radiolocation in No. 5.398A countries (RDSS)"
+   ],
+   "orbit_type": "GSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     90,
+     -128
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 10"
+    ]
+   },
+   "note": "Table 5-2 shows no slope for this row, so the value is held flat at all angles. This is our reading, not stated in the table."
+  },
+  {
+   "mask_id": "app5-2483-2500-rdss-ngso-4k",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2483.5,
+   "f_high_mhz": 2500,
+   "services": [
+    "All cases except radiolocation in No. 5.398A countries (RDSS)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 4000.0,
+   "breakpoints": [
+    [
+     0,
+     -152
+    ],
+    [
+     90,
+     -152
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 9",
+     "NOTE 10"
+    ]
+   },
+   "note": "NOTE 9 lists Finland, so this replaces -153 in the table body. Held flat at all angles, our reading."
+  },
+  {
+   "mask_id": "app5-2483-2500-rdss-ngso-1m",
+   "kind": "pfd_app5",
+   "f_low_mhz": 2483.5,
+   "f_high_mhz": 2500,
+   "services": [
+    "All cases except radiolocation in No. 5.398A countries (RDSS)"
+   ],
+   "orbit_type": "NGSO",
+   "ref_bw_hz": 1000000.0,
+   "breakpoints": [
+    [
+     0,
+     -128
+    ],
+    [
+     90,
+     -128
+    ]
+   ],
+   "unit": "dB(W/m2)",
+   "citation": {
+    "doc": "RR",
+    "clause": "Appendix 5, Table 5-2 (Rev.WRC-19)",
+    "printed_page": 165,
+    "footnotes": [
+     "NOTE 9",
+     "NOTE 10"
+    ]
+   },
+   "note": "NOTE 9 lists Finland, so this replaces -129 in the table body. Held flat at all angles, our reading."
+  }
+ ],
+ "no_limit_for_finland": [
+  {
+   "f_low_mhz": 11700,
+   "f_high_mhz": 12500,
+   "reason": "Table 21-4 has no GSO row for Region 1 here (Region 1 broadcasting-satellite planning is under Appendix 30). The non-GSO rows are included."
+  },
+  {
+   "f_low_mhz": 12200,
+   "f_high_mhz": 12750,
+   "reason": "GSO row applies to Region 3, and to Region 1 only for countries in Nos. 5.494 and 5.496. Finland is in neither."
+  },
+  {
+   "f_low_mhz": 12500,
+   "f_high_mhz": 12750,
+   "reason": "Non-GSO rows apply in Region 1 only to countries in Nos. 5.494 and 5.496. Finland is in neither."
+  },
+  {
+   "f_low_mhz": 1518,
+   "f_high_mhz": 1525,
+   "reason": "Table 21-4 rows apply only to United States territory. Appendix 5 thresholds are included."
+  }
+ ],
+ "not_covered": [
+  {
+   "f_low_mhz": 1670,
+   "f_high_mhz": 1710,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 4500,
+   "f_high_mhz": 4800,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 5150,
+   "f_high_mhz": 5216,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 5670,
+   "f_high_mhz": 5725,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 6700,
+   "f_high_mhz": 7075,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 7250,
+   "f_high_mhz": 7900,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 9900,
+   "f_high_mhz": 10400,
+   "reason": "In Table 21-4, not transcribed yet (EESS active: logarithmic mask and mean pfd)"
+  },
+  {
+   "f_low_mhz": 13400,
+   "f_high_mhz": 13650,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 21400,
+   "f_high_mhz": 22000,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 22550,
+   "f_high_mhz": 23550,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 24450,
+   "f_high_mhz": 24750,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 25250,
+   "f_high_mhz": 27500,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 27500,
+   "f_high_mhz": 30000,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 31000,
+   "f_high_mhz": 33000,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 34700,
+   "f_high_mhz": 35200,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 37000,
+   "f_high_mhz": 42500,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 47500,
+   "f_high_mhz": 50200,
+   "reason": "In Table 21-4, not transcribed yet"
+  },
+  {
+   "f_low_mhz": 18600,
+   "f_high_mhz": 18800,
+   "reason": "Separate footnote 8 limit (-95 dB(W/m2) across 200 MHz, exceedable for under 5% of time) is not evaluated. The Table 21-4 rows for 17.7-19.3 GHz are."
+  },
+  {
+   "f_low_mhz": 2160,
+   "f_high_mhz": 2200,
+   "reason": "Appendix 5 only: FDP threshold is not evaluated"
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 import pytest
 
 from ific_guard import AnalysisStore
-from ific_guard.cli import main, _write_csv
+from ific_guard.cache_cli import main, _write_csv
 from ific_guard.readers import read_mdb
 
 

@@ -1,0 +1,94 @@
+{
+  "case_count": 182,
+  "code_sha256": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli.py": "e96b23d23ab365dc8c9988c860623a025b37bfe8822e512ad9bdd425d62b58a0",
+    "config.py": "ccd179349bed67ee47db51338f80d8a54d48a2a54267b1a37acfbf2846f70732",
+    "db.py": "afd0276cb67bc21490a049e54df3d17dfe4c5c2a539f40d1f1c4828eca5a2222",
+    "engines/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "engines/p1546.py": "bf4c2db85f77d7a8d88baa70404dfa09eebca765b11341303ce9649cd10bef26",
+    "engines/pfd.py": "2e9cd78a5388a4fabc7bcc225bdcc87e252f73ca27d470fe90b1814db6b3a933",
+    "engines/pfd_ngso.py": "a4b8f9315b8d71362f52f4b8ea324cb2b73b92b559738d4a53a1aab9a227cab0",
+    "events.py": "97a681667f85a7a63985209e3190046492c5ece8ce9e832d2106616b718755d0",
+    "export.py": "94a0343f79d33d6548b344bab58779250df3385a2aad7e2f22cf5478ea0b5686",
+    "llm/__init__.py": "e0079df209be1ab624cd842454ac309efb7d2bf0dbe05622b2ce91eb7eb2bed3",
+    "llm/build_refdocs.py": "100578e0c674ba61e31215bfa06de83f8003e9bee8ee8b7e8b59313b40150f39",
+    "llm/drafts.py": "ec1e1bd55db20a4ebbd50e10e7cdc4d7729391661972c2268d2382f5c7854a30",
+    "llm/guardrail.py": "97df051f12001d1aef06dd3ea7a7b9f51ed69a5e8e429e357bf8e4a63dfe5b8b",
+    "llm/model.py": "98a4bb657af0ea009dbf6bd9dce7e02c52b06fa99e7b24c4589fe547249b33a1",
+    "llm/retrieval.py": "7f1ecd303d0238b67c67bb51a5d81f0175eb28733f833ef2ff36bf46bbfa7187",
+    "llm/template.py": "5ece894cdb80c7e51dbcbe922aad92ad2d68013b3880e28ba1b48cc9ea248ab5",
+    "models.py": "e70b2c41fccea85116ae2c9ef0109260367c77e3e4826c81a7f24e33fb465ad2",
+    "notifier/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "notifier/app.py": "14aa9e114356dbd9f197f032bbdc1c2e115baa8ae10ee55a4dea085fc3da7baf",
+    "notifier/mailer.py": "7b7eac13da79b67e7cd2c2cac44d0a39c68414785df5cf6c4e013040545a78aa",
+    "notifier/runner.py": "4fd983d6b20ce3176ac7ee6a6267d4d8994c08c8df8af2a70ece09f2f57be0c0",
+    "schemas.py": "37e593ece74a761e368f0024940b06c0c6af43d62058e8eb1178e0ff4be47f30",
+    "screening/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "screening/app.py": "08c319361ba49206d9f61a07664d9d173f54067ca485d4c78b6aa1ba70da55f1",
+    "screening/engine.py": "42b4232328483fa0f0b08a71aa8e6d3201221ae1ae5593250f64f2d9682f9296",
+    "screening/m4.py": "df4e376d1c936882d1638f3a4bebedf77c2e416ed7608bf28201699398a4ded8",
+    "screening/rule_pfd.py": "a5e513888abe6fb7284933367d9cde110ff556632c85d73c6ec85718c635b26f",
+    "screening/rule_stations.py": "ff889ea13d91b1ddf3ec890487bcc5a435c55859a6c41005e68d1f0f314ebfff",
+    "screening/rules.py": "55bfdb7afba01c25b3073830a9c79ba01fa540f9ba36bf0cebb8815cc255adc4",
+    "screening/scoring.py": "c62334592a2cf3f152453a5fad19db5218404884292a877685601fc610d66cb8",
+    "screening/space.py": "c0daf2b8282fd1bb628815994f5fcfcf5ac944719a34e2c11006def63bd8c7d4",
+    "screening/stations.py": "7ff80c8a5873eb20b42f10df53c365dcbb99d3b8095a5373e0f384892264e51b",
+    "service.py": "d1cafab92b752e47280e237650787c3e3b41ef91836704bd89179ae669715fba",
+    "sync/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sync/app.py": "d9a868857f309792567623722e011f5fdc9c7c118d730d48a205b0cffac4c872",
+    "sync/fetch.py": "88fd25ee6ac033284fd941eaf49f189466e74d39d63f89730b1bb0657f731761",
+    "sync/runner.py": "42d1ea94208bf1e84f09f56a5cbb444a0303f9036e67ef3145f451ccef8fd38f",
+    "sync/sources.py": "9f8e7c0f5257cd3d6e96bba848d9206323e57b89448f196b31f28c42ab262af2",
+    "terrestrial/__init__.py": "b1192ebb2ceb740477dd225c0bf2abf4801148b53c5d9df707fb1a4a99607d39",
+    "terrestrial/adapter.py": "953378a335e902e98683677011e4ffee3e4dde2ba9ad4482e41bd316042ab1e4",
+    "terrestrial/diff.py": "4082c008511b7be30aad48509806f3313f8ea0ea778aa3bebf4f2d2271573eb5",
+    "terrestrial/rule_field_strength.py": "05870eb5f1ea32902f8f379fca49baf99583a3be54f8c2541cabe59b35b664d1",
+    "terrestrial/trends.py": "d857ba5d6ce1ab9cc9f9246e01ddc882499bab5ba91fccfea2eae63b882b8f86"
+  },
+  "code_version": {
+    "commit": null,
+    "dirty": null
+  },
+  "config": {
+    "comment_window_months": 4,
+    "gso_visible_east_deg": 97.0,
+    "gso_visible_west_deg": -47.0,
+    "m4_filter_sha256": "58481965d7cb3d26dd9126e43b8f325a693430189ea472a9de58b4290a67544c",
+    "ngso_min_inclination_deg": 55.0
+  },
+  "domain": "space",
+  "format_version": 1,
+  "generated_at": "2026-11-07T08:13:48.086545+00:00",
+  "issue_no": 3074,
+  "limitations": [
+    "Possible concerns for expert review, not confirmed interference or regulatory breaches.",
+    "AP30/AP30A/AP30B are not screened; current scope is API/A and CR/C.",
+    "No beam coverage: pfd calculations apply maximum notified gain towards Finland, and non-GSO results may be upper bounds.",
+    "Special-interest station overlap is frequency overlap only, on RX and TX bands; stations with neither frequency are skipped.",
+    "Comment deadlines are estimates requiring expert confirmation."
+  ],
+  "mdb_sha256": "a9755213b6cdb7a26a1ca1dcf95ba69a362d3bcc2cb088e91b6b8e01e4790e31",
+  "output_sha256": {
+    "cases.csv": "e1811b1b621bbf5a824ae50a7f869d6b1d2a3ced1ff980dc646fd6c7b10cc899",
+    "cases.json": "7822f99e5fb14576f561edbd280c2cd59f65373e5ed0bf7d0f006a70a959ddbb"
+  },
+  "provisional_format": true,
+  "rule_ids": [
+    "fin-named-by-br",
+    "m4-no-space-to-earth",
+    "station-rx-overlap",
+    "pfd"
+  ],
+  "run_time_s": 46.320526,
+  "scope": {
+    "ap30_coverage": "not implemented",
+    "notice_reasons": [
+      "A",
+      "C"
+    ]
+  },
+  "source_sha256": "c8adf75044bca9d6a2be4213d051805f1b0a88d716fb184bcb1cd812216da721",
+  "source_size_bytes": 60837631,
+  "source_url": "https://www.itu.int/sns/ific10/ific3074.zip"
+}

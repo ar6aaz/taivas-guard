@@ -1,3 +1,3 @@
-from .cli import main
+from .cache_cli import main
 
 raise SystemExit(main())

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IFIC Guard</title>
+    <script>
+      // Apply a saved theme before first paint, so the page doesn't flash.
+      try { var t = localStorage.getItem('ific-guard-theme'); if (t === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

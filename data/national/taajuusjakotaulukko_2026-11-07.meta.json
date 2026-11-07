@@ -1,0 +1,24 @@
+{
+  "url": "https://opendata.traficom.fi/api/v13/Taajuusjakotaulukko",
+  "final_url": "https://opendata.traficom.fi/api/v13/Taajuusjakotaulukko",
+  "fetched_at_utc": "2026-11-07T01:56:15+00:00",
+  "http_status": 200,
+  "content_type": "application/json; odata.metadata=minimal",
+  "response_headers": {
+    "cache-control": "max-age=3600",
+    "content-length": "4359860",
+    "content-type": "application/json; odata.metadata=minimal",
+    "last-modified": "Sat, 07 Nov 2026 01:02:15 GMT",
+    "etag": "\"cb034f94-1366-4dc6-9610-33c763badbd6\"",
+    "x-content-type-options": "nosniff",
+    "report-to": "{ 'group': 'cspreportingservice', 'max-age': 10886400, 'endpoints': [ { 'url': https://eservices.traficom.fi/ReportingServices/CspReports } ] }",
+    "content-security-policy": "default-src 'self'; frame-ancestors 'none'; script-src 'self' 'sha256-fifcyVAIgzaS2fb+MaUZNhPNqaN6VvKvwMdtb2L5QQQ=' 'sha256-/GlSUXojpTdFP1iduc7mOfCaoisBUm1ExmRnLBpVPhs=' 'sha256-fzw5Jw6M5iQUUnTqHyvWkbcQjx71aN4uZrZJ4V141wo=' 'sha256-6MZatb/wK1N6x90YCtJMySTCWwZS1JAJnvzRJSawj78=' https://stat.traficom.fi https://stat.ficora.fi https://stat.viestintavirasto.fi; style-src 'self' 'unsafe-hashes' 'sha256-mJ8bjkZB5i6Ql+YU7E5BhvM4DJnb7CgkgO3Dm+PYKxE=' 'sha256-HSAk0l/m7twE9WmoJs4CT1Q3MWTi9VX1salEKauS9Zs=' 'sha256-p7pNAfSBnUJoLh6BcC1yY5jNnYejd9iUnWgP+4tSKBg=' 'sha256-aqNNdDLnnrDOnTNdkJpYlAxKVJtLt9CtFLklmInuUAE=' 'sha256-pg2ow/61vJaTzzzQFIZI529t4ll+aQoHHIpmbYlPXyc=' 'sha256-BxapNxdVY96wk/haLY8QbQYKHnJyrGzI8rTvVB03klY=' 'sha256-Vss5SoA5mUGqyWEHKOaJKQCAUF0xj8JID2mUUYkVCsM=' 'sha256-sMhrqS3OJ1a8QgRInE/piAtzsHl9xxc0tjuKRCADbDs=' 'sha256-cwsIPZjr7zWrgRWruKpTjcEGvq7ea5osvYMoe9WyxMM='; object-src 'none' ; img-src 'self' https://stat.traficom.fi https://stat.ficora.fi https://stat.viestintavirasto.fi; font-src 'self'; form-action 'self'; report-to cspreportingservice; report-uri https://eservices.traficom.fi/ReportingServices/CspReports;",
+    "x-frame-options": "DENY",
+    "date": "Sat, 07 Nov 2026 01:56:15 GMT",
+    "strict-transport-security": "max-age=31536000",
+    "server": "Traficom"
+  },
+  "user_agent": "Mozilla/5.0 (compatible)",
+  "bytes": 4359860,
+  "sha256": "41ffdd0ed84a40c19fd4bb3771699a63c879b1ad4f2201dcb1cd3c37524871fb"
+}

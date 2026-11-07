@@ -1,0 +1,66 @@
+category,service_text,low_mhz,high_mhz,api_row_ids,reason
+comment_says_passive,METEOROLOGICAL AIDS,0.0083,0.009,1,"Comment reads 'Passive system registering lightning strikes.', service text does not; passive flag not set."
+comment_says_passive,METEOROLOGICAL AIDS,0.009,0.0113,2,"Comment reads 'Passive system registering lightning strikes.', service text does not; passive flag not set."
+direction_unresolved,Space research,2.501,2.502,339,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Space research,5.003,5.005,541,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,7,7.1,698-702,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Space research,10.003,10.005,872,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,14,14.25,1063-1067,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Space research,15.005,15.01,1077,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Space research,18.052,18.068,1225,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,18.068,18.168,1231-1235,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Space research,19.99,19.995,1364,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,21,21.45,1373-1377,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,24.89,24.99,1534-1538,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Space research,25.005,25.01,1541,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,28,29.7,1720-1724,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,144,146,2071-2078,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,145.8,146,2095-2101,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,435,438,2876-2882,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AERONAUTICAL MOBILE-SATELLITE (R),1087.7,1092.3,3404,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,1215,1240,3418-3419,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,1240,1260,3424-3429,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,1260,1300,3461-3466,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Amateur-Satellite,2400,2450,3919-3925,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Earth Exploration-Satellite,5250,5350,4141,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Earth Exploration-Satellite,5350,5460,4143,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Amateur-Satellite,5650,5670,4157-4162,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,9200,9300,4363,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,9300,9800,4364,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Earth Exploration-Satellite,9800,9900,4370,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,9900,10000,4371,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,10000,10400,4383,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Amateur-Satellite,10450,10500,4414-4420,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Earth Exploration-Satellite,13250,13400,4566,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,13400,13750,4572,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,17100,17300,4679,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,22210,22500,4859,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,23600,24000,4906-4914,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,24000,24050,4930-4936,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,31500,31800,5192,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,SPACE RESEARCH,31500,31800,5194,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,35500,36000,5216,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,MOBILE-SATELLITE,43500,47000,5276,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,RADIONAVIGATION-SATELLITE,43500,47000,5278,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,47000,47200,5286-5292,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,SPACE RESEARCH,50200,50400,5306,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,SPACE RESEARCH,52600,55780,5313,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,SPACE RESEARCH,58200,59000,5343,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,MOBILE-SATELLITE,66000,71000,5414,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,RADIONAVIGATION-SATELLITE,66000,71000,5416,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Amateur-Satellite,76000,77500,5507-5513,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,77500,78000,5523-5529,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Amateur-Satellite,78000,79000,5561-5567,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Amateur-Satellite,79000,81000,5585-5591,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Amateur-Satellite,81000,81500,5601-5608,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,EARTH EXPLORATION-SATELLITE,94000,94100,5676,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,RADIONAVIGATION-SATELLITE,95000,100000,5688,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,RADIONAVIGATION-SATELLITE,123000,130000,5747,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,134000,136000,5761-5767,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Amateur-Satellite,136000,141000,5778-5785,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,MOBILE-SATELLITE,191800,200000,5829,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,RADIONAVIGATION-SATELLITE,191800,200000,5825,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,RADIONAVIGATION-SATELLITE,238000,240000,5863,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,Amateur-Satellite,241000,248000,5875-5881,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,AMATEUR-SATELLITE,248000,250000,5897-5903,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.
+direction_unresolved,RADIONAVIGATION-SATELLITE,252000,265000,5912,No direction in the service text and no earth station row for this sub-band; not counted as a space-to-Earth allocation.

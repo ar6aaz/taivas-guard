@@ -1,7 +1,21 @@
+files/
+
+.DS_Store
+.env
+# Runtime data stays out of git. Cited reference data here is source.
+/data/*
+!/data/masks/
+!/data/national/
+!/data/refdocs/
 .venv/
 __pycache__/
 .pytest_cache/
 *.egg-info/
+
+node_modules/
+dist/
+.claude/
+.local/
 .cache/
 *.duckdb
 *.duckdb.wal

@@ -1,0 +1,699 @@
+{
+  "schema_version": 1,
+  "test_only": false,
+  "source": {
+    "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+    "title": "Planning criteria and cross-border coordination of frequencies for land mobile systems in the range 29.7-470 MHz",
+    "edition": "6 June 2025",
+    "url": "https://docdb.cept.org/download/4789",
+    "register": "https://docdb.cept.org/document/category/ECC_Recommendations",
+    "pdf_sha256": "d6460dd8fcc618cf2164c96d3fd0ab3a2c45cd78265a3130f7aa516e2d35c52c",
+    "retrieved": "2026-11-07"
+  },
+  "fin_annex_5_country_type": {
+    "value": 1,
+    "citation": {
+      "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+      "clause": "Annex 5, A5.1, country types",
+      "page_or_url": "p.13, https://docdb.cept.org/download/4789"
+    }
+  },
+  "scope_notes": [
+    "Values are set by frequency band and system type, not by neighbouring country.",
+    "Scope is land mobile systems from 29.7 to 470 MHz. The document gives no value above 470 MHz or for broadcasting.",
+    "Existing bilateral or multilateral agreements remain relevant and may differ (p.2, recommends 6 on p.4). None has been checked for Finland.",
+    "Time: 10% is the stated default. Footnote 2 on p.6 says that in certain situations the 1% curves should be used for digital systems. Traficom has not yet answered which it uses (ticket 02).",
+    "The document does not say which threshold applies exactly at a band edge such as 47 MHz.",
+    "Thresholds are stated at the border-line. The document does not define the evaluation point for a sea border.",
+    "Height conversion: Annex 3 (p.10) says a 10 dB correction from 10 m to 3 m may be used for practical purposes. Annex 4 triggers are already at 3 m.",
+    "breakpoints are [distance inside the neighbouring country in km, trigger in dB(uV/m)] within ref_bw_hz."
+  ],
+  "masks": [
+    {
+      "mask_id": "tr2508_a1_29_7_47",
+      "kind": "field_strength",
+      "annex": 1,
+      "f_low_mhz": 29.7,
+      "f_high_mhz": 47,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "analogue or digital land mobile, co-channel",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          0
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_spacing/25 kHz) if power is uniform across the channel; otherwise apply within every 25 kHz",
+      "basis": "indicative threshold, recommends 2",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 1, A1.2.3",
+        "page_or_url": "p.6, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a1_47_108",
+      "kind": "field_strength",
+      "annex": 1,
+      "f_low_mhz": 47,
+      "f_high_mhz": 108,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "analogue or digital land mobile, co-channel",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          6
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_spacing/25 kHz) if power is uniform across the channel; otherwise apply within every 25 kHz",
+      "basis": "indicative threshold, recommends 2",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 1, A1.2.3",
+        "page_or_url": "p.6, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a1_108_380",
+      "kind": "field_strength",
+      "annex": 1,
+      "f_low_mhz": 108,
+      "f_high_mhz": 380,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "analogue or digital land mobile, co-channel",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          12
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_spacing/25 kHz) if power is uniform across the channel; otherwise apply within every 25 kHz",
+      "basis": "indicative threshold, recommends 2",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 1, A1.2.3",
+        "page_or_url": "p.6, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a1_380_400",
+      "kind": "field_strength",
+      "annex": 1,
+      "f_low_mhz": 380,
+      "f_high_mhz": 400,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "analogue or digital land mobile, co-channel",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          18
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_spacing/25 kHz) if power is uniform across the channel; otherwise apply within every 25 kHz",
+      "basis": "indicative threshold, recommends 2",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 1, A1.2.3",
+        "page_or_url": "p.6, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a1_400_470",
+      "kind": "field_strength",
+      "annex": 1,
+      "f_low_mhz": 400,
+      "f_high_mhz": 470,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "analogue or digital land mobile, co-channel",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          20
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_spacing/25 kHz) if power is uniform across the channel; otherwise apply within every 25 kHz",
+      "basis": "indicative threshold, recommends 2",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 1, A1.2.3",
+        "page_or_url": "p.6, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_nb_pref_regime_a_410_430",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 410,
+      "f_high_mhz": 430,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "up to 25 kHz, preferential frequency, regime a",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          40,
+          20
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_nb_pref_regime_a_450_470",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 450,
+      "f_high_mhz": 470,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "up to 25 kHz, preferential frequency, regime a",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          40,
+          20
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_nb_pref_regime_b_410_430",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 410,
+      "f_high_mhz": 430,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "up to 25 kHz, preferential frequency, regime b",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          50,
+          20
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_nb_pref_regime_b_450_470",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 450,
+      "f_high_mhz": 470,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "up to 25 kHz, preferential frequency, regime b",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          50,
+          20
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_nb_nonpref_410_430",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 410,
+      "f_high_mhz": 430,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "up to 25 kHz, non-preferential frequency, regimes a and b",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          20
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_nb_nonpref_450_470",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 450,
+      "f_high_mhz": 470,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "up to 25 kHz, non-preferential frequency, regimes a and b",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          20
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_wb_regime_a_410_430",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 410,
+      "f_high_mhz": 430,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "channel greater than 1 MHz, regime a",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          41
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_wb_regime_a_450_470",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 450,
+      "f_high_mhz": 470,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "channel greater than 1 MHz, regime a",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          41
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_wb_regime_b_410_430",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 410,
+      "f_high_mhz": 430,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "channel greater than 1 MHz, regime b",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          48
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a3_wb_regime_b_450_470",
+      "kind": "field_strength",
+      "annex": 3,
+      "f_low_mhz": 450,
+      "f_high_mhz": 470,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "channel greater than 1 MHz, regime b",
+      "ref_bw_hz": 25000,
+      "breakpoints": [
+        [
+          0,
+          48
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 10,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/25 kHz); Note 3 applies to preferential narrowband systems wider than 25 kHz",
+      "basis": "bilateral or multilateral agreement, recommends 3; partial overlap only, full overlap not covered",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 3, Table 1",
+        "page_or_url": "p.10, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a4_same_tech_case_a_410_430",
+      "kind": "field_strength",
+      "annex": 4,
+      "f_low_mhz": 410,
+      "f_high_mhz": 430,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "LTE/NR vs LTE/NR or CDMA vs CDMA: preferential codes/PCIs with aligned centres, or centres not aligned (Case A)",
+      "ref_bw_hz": 5000000,
+      "breakpoints": [
+        [
+          0,
+          55
+        ],
+        [
+          10,
+          37
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 3,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/5 MHz)",
+      "basis": "bilateral or multilateral agreement, recommends 4; FDD, non-AAS base stations",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 4, A4.1, A4.2, Table 2",
+        "page_or_url": "p.12, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a4_same_tech_case_a_450_470",
+      "kind": "field_strength",
+      "annex": 4,
+      "f_low_mhz": 450,
+      "f_high_mhz": 470,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "LTE/NR vs LTE/NR or CDMA vs CDMA: preferential codes/PCIs with aligned centres, or centres not aligned (Case A)",
+      "ref_bw_hz": 5000000,
+      "breakpoints": [
+        [
+          0,
+          55
+        ],
+        [
+          10,
+          37
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 3,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/5 MHz)",
+      "basis": "bilateral or multilateral agreement, recommends 4; FDD, non-AAS base stations",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 4, A4.1, A4.2, Table 2",
+        "page_or_url": "p.12, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a4_same_tech_case_b_410_430",
+      "kind": "field_strength",
+      "annex": 4,
+      "f_low_mhz": 410,
+      "f_high_mhz": 430,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "LTE/NR vs LTE/NR or CDMA vs CDMA: non-preferential codes/PCIs with aligned centres (Case B)",
+      "ref_bw_hz": 5000000,
+      "breakpoints": [
+        [
+          0,
+          37
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 3,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/5 MHz)",
+      "basis": "bilateral or multilateral agreement, recommends 4; FDD, non-AAS base stations",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 4, A4.1, A4.2, Table 2",
+        "page_or_url": "p.12, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a4_same_tech_case_b_450_470",
+      "kind": "field_strength",
+      "annex": 4,
+      "f_low_mhz": 450,
+      "f_high_mhz": 470,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "LTE/NR vs LTE/NR or CDMA vs CDMA: non-preferential codes/PCIs with aligned centres (Case B)",
+      "ref_bw_hz": 5000000,
+      "breakpoints": [
+        [
+          0,
+          37
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 3,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/5 MHz)",
+      "basis": "bilateral or multilateral agreement, recommends 4; FDD, non-AAS base stations",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 4, A4.1, A4.2, Table 2",
+        "page_or_url": "p.12, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a4_lte_nr_vs_cdma_case_a_410_430",
+      "kind": "field_strength",
+      "annex": 4,
+      "f_low_mhz": 410,
+      "f_high_mhz": 430,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "LTE/NR vs CDMA, centres aligned or not (Case A)",
+      "ref_bw_hz": 5000000,
+      "breakpoints": [
+        [
+          0,
+          55
+        ],
+        [
+          10,
+          37
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 3,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/5 MHz)",
+      "basis": "bilateral or multilateral agreement, recommends 4; FDD, non-AAS base stations",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 4, A4.1, A4.2, Table 2",
+        "page_or_url": "p.12, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "mask_id": "tr2508_a4_lte_nr_vs_cdma_case_a_450_470",
+      "kind": "field_strength",
+      "annex": 4,
+      "f_low_mhz": 450,
+      "f_high_mhz": 470,
+      "service": "land_mobile",
+      "orbit_type": null,
+      "system": "LTE/NR vs CDMA, centres aligned or not (Case A)",
+      "ref_bw_hz": 5000000,
+      "breakpoints": [
+        [
+          0,
+          55
+        ],
+        [
+          10,
+          37
+        ]
+      ],
+      "unit": "dB(uV/m)",
+      "rx_height_m": 3,
+      "time_percent": 10,
+      "location_percent": 50,
+      "bandwidth_conversion": "add 10*log10(channel_bandwidth/5 MHz)",
+      "basis": "bilateral or multilateral agreement, recommends 4; FDD, non-AAS base stations",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 4, A4.1, A4.2, Table 2",
+        "page_or_url": "p.12, https://docdb.cept.org/download/4789"
+      }
+    }
+  ],
+  "borders": [
+    {
+      "adm": "RUS",
+      "country": "Russia",
+      "border_specific_values_in_document": false,
+      "annex_5_country_type": null,
+      "notes": "No value specific to this border. The band-based values in masks are generic to CEPT administrations. RUS is not in the Annex 5 country type lists of this edition (pp.13 and 15) and has no type on the Figure 3 map (p.17), though the 2018 edition listed it as type 3. The document does not say whether its values apply on this border.",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 5, A5.1, country types",
+        "page_or_url": "p.13, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "adm": "S",
+      "country": "Sweden",
+      "border_specific_values_in_document": false,
+      "annex_5_country_type": 3,
+      "notes": "No value specific to this border. The band-based values in masks are generic to CEPT administrations.",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 5, A5.1, country types",
+        "page_or_url": "p.13, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "adm": "EST",
+      "country": "Estonia",
+      "border_specific_values_in_document": false,
+      "annex_5_country_type": 2,
+      "notes": "No value specific to this border. The band-based values in masks are generic to CEPT administrations.",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 5, A5.1, country types",
+        "page_or_url": "p.13, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "adm": "NOR",
+      "country": "Norway",
+      "border_specific_values_in_document": false,
+      "annex_5_country_type": 4,
+      "notes": "No value specific to this border. The band-based values in masks are generic to CEPT administrations.",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 5, A5.1, country types",
+        "page_or_url": "p.13, https://docdb.cept.org/download/4789"
+      }
+    },
+    {
+      "adm": "DNK",
+      "country": "Denmark",
+      "border_specific_values_in_document": false,
+      "annex_5_country_type": 1,
+      "notes": "No value specific to this border. The band-based values in masks are generic to CEPT administrations. Same country type as FIN.",
+      "citation": {
+        "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
+        "clause": "Annex 5, A5.1, country types",
+        "page_or_url": "p.13, https://docdb.cept.org/download/4789"
+      }
+    }
+  ]
+}

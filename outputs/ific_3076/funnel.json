@@ -1,0 +1,166 @@
+{
+  "article11_reconciliation": {
+    "article11_total": 3510,
+    "fxm_notice_rows": 3481,
+    "fxm_recorded_rows": 576,
+    "fxm_terra_rows": 4057,
+    "publication_history_rows": 3481,
+    "unreconciled_article11_minus_notice_rows": 29
+  },
+  "coordination_naming_finland": {
+    "meaning": "Inferred from the data, as the ITU ReadMe could not be read.",
+    "not_land_mobile": [],
+    "notices": [
+      "93005610",
+      "93005611",
+      "93005612",
+      "93082321",
+      "93082322",
+      "93082323",
+      "93082324",
+      "93082383",
+      "93082392",
+      "93082838"
+    ]
+  },
+  "issue_no": 3076,
+  "neighbours": {
+    "DNK": {
+      "changes": {},
+      "land_mobile_notices": 0,
+      "statement": "Notified no land-mobile station in this issue. Nothing was checked, so this is not a clean result.",
+      "within_distance": 0
+    },
+    "EST": {
+      "changes": {},
+      "land_mobile_notices": 0,
+      "statement": "Notified no land-mobile station in this issue. Nothing was checked, so this is not a clean result.",
+      "within_distance": 0
+    },
+    "NOR": {
+      "changes": {},
+      "land_mobile_notices": 0,
+      "statement": "Notified no land-mobile station in this issue. Nothing was checked, so this is not a clean result.",
+      "within_distance": 0
+    },
+    "RUS": {
+      "changes": {
+        "modified": 11,
+        "new": 103
+      },
+      "land_mobile_notices": 114,
+      "statement": "Notices below were screened.",
+      "within_distance": 29
+    },
+    "S": {
+      "changes": {},
+      "land_mobile_notices": 0,
+      "statement": "Notified no land-mobile station in this issue. Nothing was checked, so this is not a clean result.",
+      "within_distance": 0
+    }
+  },
+  "previous_issue": {
+    "issue_no": 3075,
+    "note": "Issue 3075 was read. Notified intent was cross-checked against its assignment keys.",
+    "sha256": "6f63a3dee548422cc722fd95adf7ce99f13abd8c786459d535c73e3320ed92f7",
+    "status": "available"
+  },
+  "results": {
+    "by_assessment": {
+      "above_indicative_threshold": 6,
+      "below_indicative_threshold": 9,
+      "calculated_no_criterion": 6,
+      "not_calculated": 8
+    },
+    "by_severity": {
+      "high": 1,
+      "low": 6,
+      "medium": 22
+    },
+    "with_data_quality_items": [
+      "93005610",
+      "93005611",
+      "93005612",
+      "93082397",
+      "93082398"
+    ]
+  },
+  "stages": [
+    {
+      "kept": 3481,
+      "stage": "published_in_issue",
+      "why": "Distinct fxm_pub_hist keys for this circular, in fxm_terra. Broadcasting (fmtv_*) and other tables are out of scope and not read."
+    },
+    {
+      "kept": 1858,
+      "neighbour_notices_removed": {
+        "RUS FX": 176
+      },
+      "neighbour_notices_removed_within_distance_limit": 27,
+      "removed": 1623,
+      "removed_by_station_class": {
+        "AL": 4,
+        "AM": 1,
+        "FL": 9,
+        "FX": 1602,
+        "LR": 7
+      },
+      "stage": "land_mobile",
+      "why": "Station classes ['FB', 'ML'] only (ticket 08). Others are not land mobile, including FX and FL."
+    },
+    {
+      "kept": 114,
+      "removed": 1744,
+      "removed_by_adm": {
+        "CHN": 194,
+        "F": 2,
+        "KAZ": 412,
+        "POL": 9,
+        "SVN": 1127
+      },
+      "stage": "administration",
+      "why": "Configured neighbours only: ['RUS', 'S', 'EST', 'NOR', 'DNK']. This is a team decision. A station from another administration is not considered."
+    },
+    {
+      "kept": 29,
+      "limit_km": {
+        "default": 300.0
+      },
+      "no_usable_position_flagged": 0,
+      "passed_but_beyond_limit_by_natural_earth": [
+        "93075611",
+        "93075612",
+        "93075613",
+        "93075614",
+        "93075615",
+        "93075616",
+        "93075617"
+      ],
+      "passed_furthest_km_natural_earth": 301.4,
+      "removed": 85,
+      "removed_but_within_limit_by_natural_earth": [],
+      "removed_nearest_km_natural_earth": 376.4,
+      "stage": "distance",
+      "why": "Configured engineering limit, measured to an approximate polyline. Neither is a regulatory value or a legal border."
+    },
+    {
+      "kept": 21,
+      "not_calculated": 8,
+      "not_calculated_by_reason": {
+        "missing_antenna_height": 8
+      },
+      "not_calculated_notices": [
+        "93075612",
+        "93075625",
+        "93075626",
+        "93075628",
+        "93075630",
+        "93075638",
+        "93082321",
+        "93082382"
+      ],
+      "stage": "calculated",
+      "why": "Each not-calculated notice is a finding for expert review. It is not a clear result."
+    }
+  ]
+}

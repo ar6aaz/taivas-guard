@@ -1,0 +1,65 @@
+p1546.py and p1546_tables.json are derived from:
+
+  MATLAB/Octave Implementation of Recommendation ITU-R P.1546-6, version 6.2
+  Ivica Stevanovic, Swiss Federal Office of Communications OFCOM
+  https://github.com/eeveetza/p1546, commit 0e4263999ce055100f42257c2aafbac96ac630af
+  DOI 10.5281/zenodo.6206015
+
+The upstream code credits earlier work: Jef Statham's ITU-R P.1546 calculator
+(2009, MATLAB File Exchange 25099) and a search routine by Dr. Murtaza Khan
+(MATLAB File Exchange 15088). The tabulated values come from Rec. ITU-R P.1546.
+
+
+CHANGES (2026-11-07)
+
+Rewritten in Python for IFIC Guard, so that it runs without MATLAB or Octave.
+- The 24 field-strength tables were extracted unchanged into p1546_tables.json.
+- Annex 5 s.4.2, E': both logarithms now have the same base, as the Recommendation
+  states. Upstream divides log10(h1/10) by the natural log of 2.
+- Annex 5 s.8: on a mixed path with h1 below 3 m, Esea now uses 3 m.
+- An all-sea path with h1 from 1 m to 3 m is computed at h1 with a warning, rather
+  than raised to 3 m.
+- Inputs outside the valid range raise an error rather than being clamped.
+- Removed: location variability (q other than 50%), log files, plotting and profile
+  reading. The search routine was replaced with a standard-library bisection.
+
+
+UPSTREAM LICENSE FILE
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+You may improve, modify, and create derivative works of the software or
+any portion of the software, and you may copy and distribute such
+modifications or works. Modified works should carry a notice stating
+that you changed the software and should note the date and nature of
+any such change.
+
+Please provide appropriate acknowledgments in any copies or
+derivative works of this software.
+
+
+UPSTREAM README, LICENSE AND COPYRIGHT NOTICE
+
+Swiss Federal Office of Communications OFCOM (hereinafter the "Software Copyright Holder") makes the accompanying software
+(hereinafter the "Software") available free from copyright restriction.
+
+The Software Copyright Holder represents and warrants that to the best of its knowledge,
+it has the necessary copyright rights to waive all of the copyright rights as permissible under national law in the Software
+such that the Software can be used by implementers without further licensing concerns.
+
+No patent licence is granted, nor is a patent licensing commitment made, by implication, estoppel or otherwise.
+
+Disclaimer: Other than as expressly provided herein,
+
+(1) the Software is provided "AS IS" WITH NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO,
+THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGMENT OF INTELLECTUAL PROPERTY RIGHTS and
+
+(2) neither the Software Copyright Holder (or its affiliates) nor the ITU shall be held liable in any event for any damages whatsoever
+(including, without limitation, damages for loss of profits, business interruption, loss of information, or any other pecuniary loss)
+arising out of or related to the use of or inability to use the Software.

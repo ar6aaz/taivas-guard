@@ -1,0 +1,12 @@
+{
+  "snapshot": "taajuusjakotaulukko_2026-11-07.json",
+  "snapshot_sha256": "41ffdd0ed84a40c19fd4bb3771699a63c879b1ad4f2201dcb1cd3c37524871fb",
+  "source_rows": 5917,
+  "bands": 479,
+  "bands_with_no_space_to_earth_and_terrestrial_or_passive": 365,
+  "bands_where_direction_is_unresolved": 49,
+  "log_entries": {
+    "comment_says_passive": 2,
+    "direction_unresolved": 63
+  }
+}

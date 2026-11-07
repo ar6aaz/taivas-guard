@@ -1,0 +1,3693 @@
+{
+"issue": 3083,
+"date": "2026-10-27",
+"domain": "space",
+"deadline": "2027-02-27",
+"file": {
+"zip": "ific3083.zip",
+"zipSha256": "8c44121e9a3a7b1db10e76b7227d481e3b2464e65d22e0e827bf43fdab92c1df",
+"mdb": "ific3083.mdb",
+"mdbSha256": "d79610262c90b5a882ea6725b5be6859e4009d88e95f401b7fe824fc03a8c42b"
+},
+"counts": {
+"notices": 168,
+"byType": {
+"G": 74,
+"N": 62,
+"S": 32
+},
+"sections": {
+"CR/C": 59,
+"API/A": 30,
+"CR/D": 20,
+"API/B": 15,
+"CR/E": 14,
+"RES4": 8,
+"RES49": 3
+},
+"groups": 19647,
+"emissions": 107667,
+"brFinlandNetworks": 10
+},
+"funnel": [
+{
+"key": "notices",
+"label": "Filings in the issue",
+"n": 168
+},
+{
+"key": "tx",
+"label": "Satellite transmits",
+"n": 130
+},
+{
+"key": "overlap",
+"label": "Overlaps a Finnish receiver",
+"n": 108
+},
+{
+"key": "limit",
+"label": "In a limit band we check, can reach Finland",
+"n": 71
+},
+{
+"key": "flagged",
+"label": "Above a limit at peak gain",
+"n": 41
+},
+{
+"key": "flaggedOverlap",
+"label": "Flagged and overlaps a Finnish receiver",
+"n": 39
+}
+],
+"findings": [
+{
+"ntcId": 126520016,
+"network": "SPACERAN",
+"adm": "CAN",
+"orbit": "NGSO",
+"provision": "9.6",
+"sections": [
+"CR/C"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 126675872,
+"beam": "LD111",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1544.0,
+"emission": "5M00G7W--",
+"gainDbi": 35.20000076293945,
+"powerDensityDbwHz": -48.5,
+"peakPowerDbw": 18.5,
+"refBandwidthHz": 4000.0,
+"distanceKm": 750.0,
+"angleDeg": 90.0,
+"pfd": -105.8,
+"limit": -144.0,
+"marginDb": 38.2,
+"altitudeKm": 750.0,
+"inclinationDeg": 74.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 325520062,
+"network": "ARABSAT-12P-67.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520062,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 325786661,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 41182.3,
+"angleDeg": 4.5,
+"pfd": -118.3,
+"limit": -154.0,
+"marginDb": 35.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 125520062,
+"network": "ARABSAT-12P-67.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 125786634,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 41182.3,
+"angleDeg": 4.5,
+"pfd": -118.3,
+"limit": -154.0,
+"marginDb": 35.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 325520063,
+"network": "ARABSAT-12Y-9W",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520063,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 325793612,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40978.9,
+"angleDeg": 6.4,
+"pfd": -118.2,
+"limit": -153.3,
+"marginDb": 35.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 125520063,
+"network": "ARABSAT-12Y-9W",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 125793603,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40978.9,
+"angleDeg": 6.4,
+"pfd": -118.2,
+"limit": -153.3,
+"marginDb": 35.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 125520064,
+"network": "ARABSAT-12Q-58.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 125814953,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40941.5,
+"angleDeg": 6.7,
+"pfd": -118.2,
+"limit": -153.2,
+"marginDb": 34.9,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 325520064,
+"network": "ARABSAT-12Q-58.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520064,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 325814935,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40941.5,
+"angleDeg": 6.7,
+"pfd": -118.2,
+"limit": -153.2,
+"marginDb": 34.9,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 125520066,
+"network": "ARABSAT-12G-1E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 125794386,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40752.2,
+"angleDeg": 8.4,
+"pfd": -118.2,
+"limit": -152.3,
+"marginDb": 34.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 325520066,
+"network": "ARABSAT-12G-1E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520066,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 325794404,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40752.2,
+"angleDeg": 8.4,
+"pfd": -118.2,
+"limit": -152.3,
+"marginDb": 34.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 325520067,
+"network": "ARABSAT-12F-44.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520067,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 325781950,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40651.7,
+"angleDeg": 9.4,
+"pfd": -118.2,
+"limit": -151.8,
+"marginDb": 33.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 125520067,
+"network": "ARABSAT-12F-44.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 125781941,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40651.7,
+"angleDeg": 9.4,
+"pfd": -118.2,
+"limit": -151.8,
+"marginDb": 33.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 325520065,
+"network": "ARABSAT-12N-14.7E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520065,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 325780446,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40536.7,
+"angleDeg": 10.5,
+"pfd": -118.1,
+"limit": -151.3,
+"marginDb": 33.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 125520065,
+"network": "ARABSAT-12N-14.7E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 125780428,
+"beam": "LD3R",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1530.0,
+"emission": "200KG7W--",
+"gainDbi": 39.0,
+"powerDensityDbwHz": -30.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 40536.7,
+"angleDeg": 10.5,
+"pfd": -118.1,
+"limit": -151.3,
+"marginDb": 33.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 326520021,
+"network": "SSG-CSL",
+"adm": "G",
+"orbit": "NGSO",
+"provision": "9.6",
+"sections": [
+"CR/C"
+],
+"actCode": "M",
+"targetNtcId": 116520381,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 326722131,
+"beam": "MOBLT1",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1559.0,
+"emission": "10K0G1D--",
+"gainDbi": 12.0,
+"powerDensityDbwHz": -43.0,
+"peakPowerDbw": -3.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 500.0,
+"angleDeg": 90.0,
+"pfd": -120.0,
+"limit": -144.0,
+"marginDb": 24.0,
+"altitudeKm": 500.0,
+"inclinationDeg": 97.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 116520381,
+"network": "SSG-CSL",
+"adm": "G",
+"orbit": "NGSO",
+"provision": "9.6",
+"sections": [
+"CR/C"
+],
+"actCode": "M",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 126722131,
+"beam": "MOBLT1",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1559.0,
+"emission": "10K0G1D--",
+"gainDbi": 12.0,
+"powerDensityDbwHz": -43.0,
+"peakPowerDbw": -3.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 500.0,
+"angleDeg": 90.0,
+"pfd": -120.0,
+"limit": -144.0,
+"marginDb": 24.0,
+"altitudeKm": 500.0,
+"inclinationDeg": 97.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 126545312,
+"network": "J-BLUEBIRD-NGSO",
+"adm": "J",
+"orbit": "NGSO",
+"provision": "9.1/IA",
+"sections": [
+"API/A"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2500-2690 MHz",
+"calc": {
+"groupId": 126756235,
+"beam": "SDL46",
+"fMinMhz": 2620.0,
+"fMaxMhz": 2670.0,
+"emission": "10M0D7W--",
+"gainDbi": 46.0,
+"powerDensityDbwHz": -91.30000305175781,
+"peakPowerDbw": -21.299999237060547,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 2494.4,
+"angleDeg": 5.0,
+"pfd": -124.2,
+"limit": -136.0,
+"marginDb": 11.8,
+"altitudeKm": 670.0,
+"inclinationDeg": 43.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 4,
+"stations": [
+{
+"id": 985264,
+"rxMhz": 2629.7,
+"licence": "MVV",
+"lat": 60.5734,
+"lon": 21.3138
+},
+{
+"id": 981446,
+"rxMhz": 2652.0,
+"licence": "MVV",
+"lat": 65.9612,
+"lon": 26.7369
+},
+{
+"id": 983375,
+"rxMhz": 2669.6,
+"licence": "MVV",
+"lat": 69.671,
+"lon": 29.0819
+},
+{
+"id": 985046,
+"rxMhz": 2626.6,
+"licence": "MVV",
+"lat": 61.894,
+"lon": 21.8078
+}
+]
+},
+{
+"ntcId": 126500125,
+"network": "VICTUS HAZE",
+"adm": "USA",
+"orbit": "NGSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2200-2300 MHz",
+"calc": {
+"groupId": 126718143,
+"beam": "SDN",
+"fMinMhz": 2217.5,
+"fMaxMhz": 2222.5,
+"emission": "72K0G1D--",
+"gainDbi": 6.0,
+"powerDensityDbwHz": -54.70000076293945,
+"peakPowerDbw": -6.199999809265137,
+"refBandwidthHz": 4000.0,
+"distanceKm": 350.0,
+"angleDeg": 90.0,
+"pfd": -134.6,
+"limit": -144.0,
+"marginDb": 9.4,
+"altitudeKm": 350.0,
+"inclinationDeg": 100.5,
+"lat": null,
+"lon": null
+},
+"stationCount": 27,
+"stations": [
+{
+"id": 800000,
+"rxMhz": 2221.9,
+"licence": "FX",
+"lat": 61.6794,
+"lon": 27.31665
+},
+{
+"id": 800001,
+"rxMhz": 2222.63,
+"licence": "FX",
+"lat": 64.19313,
+"lon": 27.69395
+},
+{
+"id": 800002,
+"rxMhz": 2223.36,
+"licence": "FX",
+"lat": 61.60535,
+"lon": 23.78093
+},
+{
+"id": 800003,
+"rxMhz": 2224.09,
+"licence": "FX",
+"lat": 66.49737,
+"lon": 25.75329
+},
+{
+"id": 800004,
+"rxMhz": 2224.82,
+"licence": "FX",
+"lat": 64.93594,
+"lon": 25.59054
+},
+{
+"id": 800060,
+"rxMhz": 2221.9,
+"licence": "FX",
+"lat": 62.76634,
+"lon": 22.85941
+}
+]
+},
+{
+"ntcId": 125500118,
+"network": "CHINASAT-F-87.5E",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 125636826,
+"beam": "KADR",
+"fMinMhz": 17950.0,
+"fMaxMhz": 18200.0,
+"emission": "100MG7W--",
+"gainDbi": 49.0,
+"powerDensityDbwHz": -54.0,
+"peakPowerDbw": 26.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41126.3,
+"angleDeg": 5.0,
+"pfd": -108.3,
+"limit": -115.0,
+"marginDb": 6.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 65.0,
+"lon": 31.5
+},
+"stationCount": 5,
+"stations": [
+{
+"id": 603413,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 62.114,
+"lon": 26.038
+},
+{
+"id": 616722,
+"rxMhz": 18250.0,
+"licence": null,
+"lat": 60.2312,
+"lon": 24.9865
+},
+{
+"id": 628728,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 61.8176,
+"lon": 28.16489
+},
+{
+"id": 632476,
+"rxMhz": 17975.0,
+"licence": null,
+"lat": 61.9216,
+"lon": 29.00949
+},
+{
+"id": 647668,
+"rxMhz": 18030.0,
+"licence": null,
+"lat": 59.8824,
+"lon": 23.15619
+}
+]
+},
+{
+"ntcId": 125500118,
+"network": "CHINASAT-F-87.5E",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 125636821,
+"beam": "KADR",
+"fMinMhz": 19200.0,
+"fMaxMhz": 19700.0,
+"emission": "50M0G7W--",
+"gainDbi": 49.0,
+"powerDensityDbwHz": -54.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41126.3,
+"angleDeg": 5.0,
+"pfd": -108.3,
+"limit": -115.0,
+"marginDb": 6.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 65.0,
+"lon": 31.5
+},
+"stationCount": 3,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 624714,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 63.2966,
+"lon": 22.02191
+}
+]
+},
+{
+"ntcId": 326500176,
+"network": "KOREASAT 3-1",
+"adm": "KOR",
+"orbit": "NGSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": 123500141,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2200-2300 MHz",
+"calc": {
+"groupId": 326767684,
+"beam": "SD2",
+"fMinMhz": 2217.14,
+"fMaxMhz": 2282.91,
+"emission": "186KG7D--",
+"gainDbi": 0.0,
+"powerDensityDbwHz": -45.70000076293945,
+"peakPowerDbw": 7.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 2230.9,
+"angleDeg": 5.0,
+"pfd": -147.6,
+"limit": -154.0,
+"marginDb": 6.4,
+"altitudeKm": 560.0,
+"inclinationDeg": 43.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 170,
+"stations": [
+{
+"id": 408577,
+"rxMhz": 2266.0,
+"licence": "MUUT",
+"lat": 67.51793,
+"lon": 26.36802
+},
+{
+"id": 440557,
+"rxMhz": 2279.0,
+"licence": "MUUT",
+"lat": 61.18644,
+"lon": 27.56091
+},
+{
+"id": 452076,
+"rxMhz": 2276.0,
+"licence": "MUUT",
+"lat": 64.21928,
+"lon": 21.59466
+},
+{
+"id": 454152,
+"rxMhz": 2274.0,
+"licence": "MUUT",
+"lat": 64.52194,
+"lon": 22.8198
+},
+{
+"id": 467765,
+"rxMhz": 2276.0,
+"licence": "MUUT",
+"lat": 63.31365,
+"lon": 25.92324
+},
+{
+"id": 477781,
+"rxMhz": 2279.0,
+"licence": "MUUT",
+"lat": 66.28073,
+"lon": 23.89423
+}
+]
+},
+{
+"ntcId": 126545311,
+"network": "VSAR-03",
+"adm": "VTN",
+"orbit": "NGSO",
+"provision": "9.1/IA",
+"sections": [
+"API/A"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2200-2300 MHz",
+"calc": {
+"groupId": 126751014,
+"beam": "TMS",
+"fMinMhz": 2242.0,
+"fMaxMhz": 2243.0,
+"emission": "1M00G1D-N",
+"gainDbi": 5.0,
+"powerDensityDbwHz": -54.0,
+"peakPowerDbw": 6.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 524.9,
+"angleDeg": 90.0,
+"pfd": -138.4,
+"limit": -144.0,
+"marginDb": 5.6,
+"altitudeKm": 524.86,
+"inclinationDeg": 97.5,
+"lat": null,
+"lon": null
+},
+"stationCount": 27,
+"stations": [
+{
+"id": 800025,
+"rxMhz": 2240.15,
+"licence": "FX",
+"lat": 61.69703,
+"lon": 27.26667
+},
+{
+"id": 800026,
+"rxMhz": 2240.88,
+"licence": "FX",
+"lat": 61.43345,
+"lon": 23.77058
+},
+{
+"id": 800027,
+"rxMhz": 2241.61,
+"licence": "FX",
+"lat": 61.88046,
+"lon": 28.90069
+},
+{
+"id": 800028,
+"rxMhz": 2242.34,
+"licence": "FX",
+"lat": 65.09714,
+"lon": 25.3336
+},
+{
+"id": 800029,
+"rxMhz": 2243.07,
+"licence": "FX",
+"lat": 62.35822,
+"lon": 25.6176
+},
+{
+"id": 800085,
+"rxMhz": 2240.15,
+"licence": "FX",
+"lat": 63.77654,
+"lon": 25.33907
+}
+]
+},
+{
+"ntcId": 125545348,
+"network": "CA-01",
+"adm": "POR",
+"orbit": "NGSO",
+"provision": "9.1/IA",
+"sections": [
+"API/A"
+],
+"actCode": "M",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 8025-8500 MHz",
+"calc": {
+"groupId": 126752551,
+"beam": "XTXB",
+"fMinMhz": 8025.0,
+"fMaxMhz": 8400.0,
+"emission": "120MG1D--",
+"gainDbi": 23.0,
+"powerDensityDbwHz": -66.5,
+"peakPowerDbw": 14.300000190734863,
+"refBandwidthHz": 4000.0,
+"distanceKm": 650.0,
+"angleDeg": 90.0,
+"pfd": -134.7,
+"limit": -140.0,
+"marginDb": 5.3,
+"altitudeKm": 650.0,
+"inclinationDeg": 97.19999694824219,
+"lat": null,
+"lon": null
+},
+"stationCount": 1,
+"stations": [
+{
+"id": 405674,
+"rxMhz": 8211.0,
+"licence": "MUUT",
+"lat": 62.83568,
+"lon": 24.71813
+}
+]
+},
+{
+"ntcId": 326500094,
+"network": "BEESAT-OC-LS",
+"adm": "G",
+"orbit": "NGSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": 126500013,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 8025-8500 MHz",
+"calc": {
+"groupId": 326656229,
+"beam": "XDL1",
+"fMinMhz": 8025.0,
+"fMaxMhz": 8400.0,
+"emission": "300MG1D--",
+"gainDbi": 17.0,
+"powerDensityDbwHz": -63.0,
+"peakPowerDbw": 20.899999618530273,
+"refBandwidthHz": 4000.0,
+"distanceKm": 515.0,
+"angleDeg": 90.0,
+"pfd": -135.2,
+"limit": -140.0,
+"marginDb": 4.8,
+"altitudeKm": 515.0,
+"inclinationDeg": 97.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 1,
+"stations": [
+{
+"id": 405674,
+"rxMhz": 8211.0,
+"licence": "MUUT",
+"lat": 62.83568,
+"lon": 24.71813
+}
+]
+},
+{
+"ntcId": 125520005,
+"network": "PAKSAT-2",
+"adm": "PAK",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/E"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 125738249,
+"beam": "KATEC",
+"fMinMhz": 17800.0,
+"fMaxMhz": 18100.0,
+"emission": "80M0G7W--",
+"gainDbi": 45.0,
+"powerDensityDbwHz": -50.0,
+"peakPowerDbw": 29.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40557.0,
+"angleDeg": 10.3,
+"pfd": -108.2,
+"limit": -112.4,
+"marginDb": 4.2,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 6,
+"stations": [
+{
+"id": 603413,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 62.114,
+"lon": 26.038
+},
+{
+"id": 628219,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 61.5623,
+"lon": 27.1459
+},
+{
+"id": 628728,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 61.8176,
+"lon": 28.16489
+},
+{
+"id": 632476,
+"rxMhz": 17975.0,
+"licence": null,
+"lat": 61.9216,
+"lon": 29.00949
+},
+{
+"id": 637357,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 60.5541,
+"lon": 24.33961
+},
+{
+"id": 647668,
+"rxMhz": 18030.0,
+"licence": null,
+"lat": 59.8824,
+"lon": 23.15619
+}
+]
+},
+{
+"ntcId": 325520005,
+"network": "PAKSAT-2",
+"adm": "PAK",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/E"
+],
+"actCode": "M",
+"targetNtcId": 125520005,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 325738245,
+"beam": "KATEC",
+"fMinMhz": 18100.0,
+"fMaxMhz": 18800.0,
+"emission": "10M0G7W--",
+"gainDbi": 45.0,
+"powerDensityDbwHz": -50.0,
+"peakPowerDbw": 20.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40557.0,
+"angleDeg": 10.3,
+"pfd": -108.2,
+"limit": -112.4,
+"marginDb": 4.2,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 6,
+"stations": [
+{
+"id": 611959,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 64.2533,
+"lon": 24.14781
+},
+{
+"id": 613999,
+"rxMhz": 18765.0,
+"licence": null,
+"lat": 65.9768,
+"lon": 29.0493
+},
+{
+"id": 614038,
+"rxMhz": 18765.0,
+"licence": null,
+"lat": 60.2476,
+"lon": 24.8252
+},
+{
+"id": 616722,
+"rxMhz": 18250.0,
+"licence": null,
+"lat": 60.2312,
+"lon": 24.9865
+},
+{
+"id": 616738,
+"rxMhz": 18765.0,
+"licence": null,
+"lat": 63.4176,
+"lon": 30.07201
+},
+{
+"id": 636208,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 63.2779,
+"lon": 22.1382
+}
+]
+},
+{
+"ntcId": 125520005,
+"network": "PAKSAT-2",
+"adm": "PAK",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/E"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 125738246,
+"beam": "KATEC",
+"fMinMhz": 18800.0,
+"fMaxMhz": 19700.0,
+"emission": "10M0G7W--",
+"gainDbi": 45.0,
+"powerDensityDbwHz": -50.0,
+"peakPowerDbw": 20.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40557.0,
+"angleDeg": 10.3,
+"pfd": -108.2,
+"limit": -112.4,
+"marginDb": 4.2,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 9,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 623938,
+"rxMhz": 19040.0,
+"licence": null,
+"lat": 59.8397,
+"lon": 23.0846
+}
+]
+},
+{
+"ntcId": 325520005,
+"network": "PAKSAT-2",
+"adm": "PAK",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/E"
+],
+"actCode": "M",
+"targetNtcId": 125520005,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 325738246,
+"beam": "KATEC",
+"fMinMhz": 18800.0,
+"fMaxMhz": 19700.0,
+"emission": "10M0G7W--",
+"gainDbi": 45.0,
+"powerDensityDbwHz": -50.0,
+"peakPowerDbw": 20.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40557.0,
+"angleDeg": 10.3,
+"pfd": -108.2,
+"limit": -112.4,
+"marginDb": 4.2,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 9,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 623938,
+"rxMhz": 19040.0,
+"licence": null,
+"lat": 59.8397,
+"lon": 23.0846
+}
+]
+},
+{
+"ntcId": 125500126,
+"network": "HELLAS-SAT-C",
+"adm": "GRC",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 125639144,
+"beam": "KAD1R",
+"fMinMhz": 18750.0,
+"fMaxMhz": 19700.0,
+"emission": "36M0G7W--",
+"gainDbi": 38.0,
+"powerDensityDbwHz": -43.099998474121094,
+"peakPowerDbw": 32.5,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40569.8,
+"angleDeg": 10.2,
+"pfd": -108.3,
+"limit": -112.4,
+"marginDb": 4.2,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 12,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 613999,
+"rxMhz": 18765.0,
+"licence": null,
+"lat": 65.9768,
+"lon": 29.0493
+}
+]
+},
+{
+"ntcId": 125500126,
+"network": "HELLAS-SAT-C",
+"adm": "GRC",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 125639145,
+"beam": "KAD1R",
+"fMinMhz": 18100.0,
+"fMaxMhz": 18800.0,
+"emission": "36M0G7W--",
+"gainDbi": 38.0,
+"powerDensityDbwHz": -43.099998474121094,
+"peakPowerDbw": 32.5,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40569.8,
+"angleDeg": 10.2,
+"pfd": -108.3,
+"limit": -112.4,
+"marginDb": 4.2,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 6,
+"stations": [
+{
+"id": 611959,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 64.2533,
+"lon": 24.14781
+},
+{
+"id": 613999,
+"rxMhz": 18765.0,
+"licence": null,
+"lat": 65.9768,
+"lon": 29.0493
+},
+{
+"id": 614038,
+"rxMhz": 18765.0,
+"licence": null,
+"lat": 60.2476,
+"lon": 24.8252
+},
+{
+"id": 616722,
+"rxMhz": 18250.0,
+"licence": null,
+"lat": 60.2312,
+"lon": 24.9865
+},
+{
+"id": 616738,
+"rxMhz": 18765.0,
+"licence": null,
+"lat": 63.4176,
+"lon": 30.07201
+},
+{
+"id": 636208,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 63.2779,
+"lon": 22.1382
+}
+]
+},
+{
+"ntcId": 123500146,
+"network": "CHINASAT-E-33.5E",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 123718689,
+"beam": "KADR",
+"fMinMhz": 19200.0,
+"fMaxMhz": 19700.0,
+"emission": "30M0F9W--",
+"gainDbi": 49.0,
+"powerDensityDbwHz": -54.0,
+"peakPowerDbw": 20.799999237060547,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40507.4,
+"angleDeg": 10.7,
+"pfd": -108.1,
+"limit": -112.1,
+"marginDb": 4.0,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 3,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 624714,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 63.2966,
+"lon": 22.02191
+}
+]
+},
+{
+"ntcId": 323500146,
+"network": "CHINASAT-E-33.5E",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": 123500146,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 323718689,
+"beam": "KADR",
+"fMinMhz": 19200.0,
+"fMaxMhz": 19700.0,
+"emission": "100MG7W--",
+"gainDbi": 49.0,
+"powerDensityDbwHz": -54.0,
+"peakPowerDbw": 26.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40507.4,
+"angleDeg": 10.7,
+"pfd": -108.1,
+"limit": -112.1,
+"marginDb": 4.0,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 3,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 624714,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 63.2966,
+"lon": 22.02191
+}
+]
+},
+{
+"ntcId": 323500146,
+"network": "CHINASAT-E-33.5E",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": 123500146,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 323718689,
+"beam": "KADR",
+"fMinMhz": 19200.0,
+"fMaxMhz": 19700.0,
+"emission": "100MG7W--",
+"gainDbi": 49.0,
+"powerDensityDbwHz": -54.0,
+"peakPowerDbw": 26.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40507.4,
+"angleDeg": 10.7,
+"pfd": -108.1,
+"limit": -112.1,
+"marginDb": 4.0,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 3,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 624714,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 63.2966,
+"lon": 22.02191
+}
+]
+},
+{
+"ntcId": 123500146,
+"network": "CHINASAT-E-33.5E",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 123718689,
+"beam": "KADR",
+"fMinMhz": 19200.0,
+"fMaxMhz": 19700.0,
+"emission": "50M0G7W--",
+"gainDbi": 49.0,
+"powerDensityDbwHz": -54.0,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 40507.4,
+"angleDeg": 10.7,
+"pfd": -108.1,
+"limit": -112.1,
+"marginDb": 4.0,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 19.5
+},
+"stationCount": 3,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 624714,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 63.2966,
+"lon": 22.02191
+}
+]
+},
+{
+"ntcId": 126520031,
+"network": "ANANTHSAT-89E-A",
+"adm": "IND",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 126684379,
+"beam": "KAFDA",
+"fMinMhz": 18700.0,
+"fMaxMhz": 19700.0,
+"emission": "27M0G7W--",
+"gainDbi": 54.0,
+"powerDensityDbwHz": -62.20000076293945,
+"peakPowerDbw": 12.300000190734863,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41186.8,
+"angleDeg": 4.5,
+"pfd": -111.5,
+"limit": -115.0,
+"marginDb": 3.5,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 65.0,
+"lon": 31.5
+},
+"stationCount": 12,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 613999,
+"rxMhz": 18765.0,
+"licence": null,
+"lat": 65.9768,
+"lon": 29.0493
+}
+]
+},
+{
+"ntcId": 126520031,
+"network": "ANANTHSAT-89E-A",
+"adm": "IND",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 126683995,
+"beam": "KABD",
+"fMinMhz": 18700.0,
+"fMaxMhz": 19700.0,
+"emission": "125MG7W--",
+"gainDbi": 54.0,
+"powerDensityDbwHz": -62.20000076293945,
+"peakPowerDbw": 19.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41186.8,
+"angleDeg": 4.5,
+"pfd": -111.5,
+"limit": -115.0,
+"marginDb": 3.5,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 65.0,
+"lon": 31.5
+},
+"stationCount": 12,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 613999,
+"rxMhz": 18765.0,
+"licence": null,
+"lat": 65.9768,
+"lon": 29.0493
+}
+]
+},
+{
+"ntcId": 125512119,
+"network": "SIGNSAT-NGSO",
+"adm": "CHN",
+"orbit": "NGSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 1525-1530 MHz",
+"calc": {
+"groupId": 125642371,
+"beam": "LD1",
+"fMinMhz": 1525.0,
+"fMaxMhz": 1559.0,
+"emission": "6M00G7W--",
+"gainDbi": 15.0,
+"powerDensityDbwHz": -61.70000076293945,
+"peakPowerDbw": 6.099999904632568,
+"refBandwidthHz": 4000.0,
+"distanceKm": 880.0,
+"angleDeg": 90.0,
+"pfd": -140.6,
+"limit": -144.0,
+"marginDb": 3.4,
+"altitudeKm": 880.0,
+"inclinationDeg": 86.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 126545044,
+"network": "TOUTATIS",
+"adm": "F",
+"orbit": "NGSO",
+"provision": "9.1/IA",
+"sections": [
+"API/A",
+"API/B"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 8025-8500 MHz",
+"calc": {
+"groupId": 126652530,
+"beam": "TXX",
+"fMinMhz": 8025.0,
+"fMaxMhz": 8345.0,
+"emission": "110MF1D-F",
+"gainDbi": 16.5,
+"powerDensityDbwHz": -63.5,
+"peakPowerDbw": 15.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 550.0,
+"angleDeg": 90.0,
+"pfd": -136.8,
+"limit": -140.0,
+"marginDb": 3.2,
+"altitudeKm": 550.0,
+"inclinationDeg": 97.5999984741211,
+"lat": null,
+"lon": null
+},
+"stationCount": 1,
+"stations": [
+{
+"id": 405674,
+"rxMhz": 8211.0,
+"licence": "MUUT",
+"lat": 62.83568,
+"lon": 24.71813
+}
+]
+},
+{
+"ntcId": 123520041,
+"network": "WSDRN-5M",
+"adm": "RUS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/E"
+],
+"actCode": "M",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 124734204,
+"beam": "KAE1",
+"fMinMhz": 17700.0,
+"fMaxMhz": 18600.0,
+"emission": "115MG7W--",
+"gainDbi": 43.5,
+"powerDensityDbwHz": -52.099998474121094,
+"peakPowerDbw": 28.5,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41168.0,
+"angleDeg": 4.6,
+"pfd": -111.9,
+"limit": -115.0,
+"marginDb": 3.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 12,
+"stations": [
+{
+"id": 603413,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 62.114,
+"lon": 26.038
+},
+{
+"id": 607797,
+"rxMhz": 17755.0,
+"licence": null,
+"lat": 63.288,
+"lon": 30.0918
+},
+{
+"id": 611959,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 64.2533,
+"lon": 24.14781
+},
+{
+"id": 616722,
+"rxMhz": 18250.0,
+"licence": null,
+"lat": 60.2312,
+"lon": 24.9865
+},
+{
+"id": 628219,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 61.5623,
+"lon": 27.1459
+},
+{
+"id": 628728,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 61.8176,
+"lon": 28.16489
+}
+]
+},
+{
+"ntcId": 323520041,
+"network": "WSDRN-5M",
+"adm": "RUS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/E"
+],
+"actCode": "M",
+"targetNtcId": 123520041,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 324734206,
+"beam": "KAE1",
+"fMinMhz": 18800.0,
+"fMaxMhz": 21200.0,
+"emission": "115MG7W--",
+"gainDbi": 43.5,
+"powerDensityDbwHz": -52.099998474121094,
+"peakPowerDbw": 28.5,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41168.0,
+"angleDeg": 4.6,
+"pfd": -111.9,
+"limit": -115.0,
+"marginDb": 3.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 9,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 623938,
+"rxMhz": 19040.0,
+"licence": null,
+"lat": 59.8397,
+"lon": 23.0846
+}
+]
+},
+{
+"ntcId": 323520041,
+"network": "WSDRN-5M",
+"adm": "RUS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/E"
+],
+"actCode": "M",
+"targetNtcId": 123520041,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 324734204,
+"beam": "KAE1",
+"fMinMhz": 17700.0,
+"fMaxMhz": 18600.0,
+"emission": "3M20G7W--",
+"gainDbi": 43.5,
+"powerDensityDbwHz": -52.099998474121094,
+"peakPowerDbw": 13.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41168.0,
+"angleDeg": 4.6,
+"pfd": -111.9,
+"limit": -115.0,
+"marginDb": 3.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 12,
+"stations": [
+{
+"id": 603413,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 62.114,
+"lon": 26.038
+},
+{
+"id": 607797,
+"rxMhz": 17755.0,
+"licence": null,
+"lat": 63.288,
+"lon": 30.0918
+},
+{
+"id": 611959,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 64.2533,
+"lon": 24.14781
+},
+{
+"id": 616722,
+"rxMhz": 18250.0,
+"licence": null,
+"lat": 60.2312,
+"lon": 24.9865
+},
+{
+"id": 628219,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 61.5623,
+"lon": 27.1459
+},
+{
+"id": 628728,
+"rxMhz": 17920.0,
+"licence": null,
+"lat": 61.8176,
+"lon": 28.16489
+}
+]
+},
+{
+"ntcId": 123520041,
+"network": "WSDRN-5M",
+"adm": "RUS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/E"
+],
+"actCode": "M",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 124734210,
+"beam": "KAE2",
+"fMinMhz": 18800.0,
+"fMaxMhz": 21200.0,
+"emission": "32M0G7W--",
+"gainDbi": 43.5,
+"powerDensityDbwHz": -52.099998474121094,
+"peakPowerDbw": 23.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41168.0,
+"angleDeg": 4.6,
+"pfd": -111.9,
+"limit": -115.0,
+"marginDb": 3.1,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 70.1,
+"lon": 31.5
+},
+"stationCount": 9,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 623938,
+"rxMhz": 19040.0,
+"licence": null,
+"lat": 59.8397,
+"lon": 23.0846
+}
+]
+},
+{
+"ntcId": 126545089,
+"network": "ASTRA HYRAX",
+"adm": "USA",
+"orbit": "NGSO",
+"provision": "9.1/IA",
+"sections": [
+"API/A",
+"API/B"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 8025-8500 MHz",
+"calc": {
+"groupId": 126655287,
+"beam": "XDN",
+"fMinMhz": 8196.0,
+"fMaxMhz": 8204.0,
+"emission": "8M00G1D--",
+"gainDbi": 16.0,
+"powerDensityDbwHz": -64.5,
+"peakPowerDbw": 1.5,
+"refBandwidthHz": 4000.0,
+"distanceKm": 500.0,
+"angleDeg": 90.0,
+"pfd": -137.5,
+"limit": -140.0,
+"marginDb": 2.5,
+"altitudeKm": 500.0,
+"inclinationDeg": 60.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 1,
+"stations": [
+{
+"id": 405674,
+"rxMhz": 8211.0,
+"licence": "MUUT",
+"lat": 62.83568,
+"lon": 24.71813
+}
+]
+},
+{
+"ntcId": 326500094,
+"network": "BEESAT-OC-LS",
+"adm": "G",
+"orbit": "NGSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": 126500013,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2200-2300 MHz",
+"calc": {
+"groupId": 326656238,
+"beam": "SDL2",
+"fMinMhz": 2200.0,
+"fMaxMhz": 2290.0,
+"emission": "6M00G1D--",
+"gainDbi": 7.0,
+"powerDensityDbwHz": -60.0,
+"peakPowerDbw": 7.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 515.0,
+"angleDeg": 90.0,
+"pfd": -142.2,
+"limit": -144.0,
+"marginDb": 1.8,
+"altitudeKm": 515.0,
+"inclinationDeg": 97.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 170,
+"stations": [
+{
+"id": 408577,
+"rxMhz": 2266.0,
+"licence": "MUUT",
+"lat": 67.51793,
+"lon": 26.36802
+},
+{
+"id": 440557,
+"rxMhz": 2279.0,
+"licence": "MUUT",
+"lat": 61.18644,
+"lon": 27.56091
+},
+{
+"id": 452076,
+"rxMhz": 2276.0,
+"licence": "MUUT",
+"lat": 64.21928,
+"lon": 21.59466
+},
+{
+"id": 454152,
+"rxMhz": 2274.0,
+"licence": "MUUT",
+"lat": 64.52194,
+"lon": 22.8198
+},
+{
+"id": 467765,
+"rxMhz": 2276.0,
+"licence": "MUUT",
+"lat": 63.31365,
+"lon": 25.92324
+},
+{
+"id": 477781,
+"rxMhz": 2279.0,
+"licence": "MUUT",
+"lat": 66.28073,
+"lon": 23.89423
+}
+]
+},
+{
+"ntcId": 125520060,
+"network": "CHNTELESAT-G1-34.25W",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 125785444,
+"beam": "KAFLD",
+"fMinMhz": 18200.0,
+"fMaxMhz": 20200.0,
+"emission": "500MG7W--",
+"gainDbi": 43.0,
+"powerDensityDbwHz": -53.0,
+"peakPowerDbw": 32.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41258.5,
+"angleDeg": 3.8,
+"pfd": -113.3,
+"limit": -115.0,
+"marginDb": 1.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 65.0,
+"lon": 25.0
+},
+"stationCount": 15,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 611959,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 64.2533,
+"lon": 24.14781
+}
+]
+},
+{
+"ntcId": 325520060,
+"network": "CHNTELESAT-G1-34.25W",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520060,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 325785316,
+"beam": "KAFLD",
+"fMinMhz": 18450.0,
+"fMaxMhz": 19950.0,
+"emission": "500MG7W--",
+"gainDbi": 43.0,
+"powerDensityDbwHz": -53.0,
+"peakPowerDbw": 32.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41258.5,
+"angleDeg": 3.8,
+"pfd": -113.3,
+"limit": -115.0,
+"marginDb": 1.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 65.0,
+"lon": 25.0
+},
+"stationCount": 14,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 611959,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 64.2533,
+"lon": 24.14781
+}
+]
+},
+{
+"ntcId": 125520060,
+"network": "CHNTELESAT-G1-34.25W",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 125785444,
+"beam": "KAFLD",
+"fMinMhz": 18200.0,
+"fMaxMhz": 20200.0,
+"emission": "300MG7W--",
+"gainDbi": 43.0,
+"powerDensityDbwHz": -53.0,
+"peakPowerDbw": 29.799999237060547,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41258.5,
+"angleDeg": 3.8,
+"pfd": -113.3,
+"limit": -115.0,
+"marginDb": 1.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 65.0,
+"lon": 25.0
+},
+"stationCount": 15,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 611959,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 64.2533,
+"lon": 24.14781
+}
+]
+},
+{
+"ntcId": 325520060,
+"network": "CHNTELESAT-G1-34.25W",
+"adm": "CHN",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520060,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 19.3-19.7 GHz",
+"calc": {
+"groupId": 325785316,
+"beam": "KAFLD",
+"fMinMhz": 18450.0,
+"fMaxMhz": 19950.0,
+"emission": "500MG7W--",
+"gainDbi": 43.0,
+"powerDensityDbwHz": -53.0,
+"peakPowerDbw": 32.0,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 41258.5,
+"angleDeg": 3.8,
+"pfd": -113.3,
+"limit": -115.0,
+"marginDb": 1.7,
+"altitudeKm": null,
+"inclinationDeg": null,
+"lat": 65.0,
+"lon": 25.0
+},
+"stationCount": 14,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 602436,
+"rxMhz": 19480.0,
+"licence": null,
+"lat": 64.1876,
+"lon": 23.9796
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 611959,
+"rxMhz": 18470.0,
+"licence": null,
+"lat": 64.2533,
+"lon": 24.14781
+}
+]
+},
+{
+"ntcId": 126545031,
+"network": "USASAT-30-5",
+"adm": "USA",
+"orbit": "NGSO",
+"provision": "9.1/IA",
+"sections": [
+"API/A",
+"API/B"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2200-2300 MHz",
+"calc": {
+"groupId": 126655670,
+"beam": "TS",
+"fMinMhz": 2200.0,
+"fMaxMhz": 2290.0,
+"emission": "288KG1D--",
+"gainDbi": 5.0,
+"powerDensityDbwHz": -57.79999923706055,
+"peakPowerDbw": -4.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 625.0,
+"angleDeg": 90.0,
+"pfd": -143.7,
+"limit": -144.0,
+"marginDb": 0.3,
+"altitudeKm": 625.0,
+"inclinationDeg": 88.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 170,
+"stations": [
+{
+"id": 408577,
+"rxMhz": 2266.0,
+"licence": "MUUT",
+"lat": 67.51793,
+"lon": 26.36802
+},
+{
+"id": 440557,
+"rxMhz": 2279.0,
+"licence": "MUUT",
+"lat": 61.18644,
+"lon": 27.56091
+},
+{
+"id": 452076,
+"rxMhz": 2276.0,
+"licence": "MUUT",
+"lat": 64.21928,
+"lon": 21.59466
+},
+{
+"id": 454152,
+"rxMhz": 2274.0,
+"licence": "MUUT",
+"lat": 64.52194,
+"lon": 22.8198
+},
+{
+"id": 467765,
+"rxMhz": 2276.0,
+"licence": "MUUT",
+"lat": 63.31365,
+"lon": 25.92324
+},
+{
+"id": 477781,
+"rxMhz": 2279.0,
+"licence": "MUUT",
+"lat": 66.28073,
+"lon": 23.89423
+}
+]
+},
+{
+"ntcId": 126545288,
+"network": "INDSAT-NGSO-LEO-1",
+"adm": "IND",
+"orbit": "NGSO",
+"provision": "9.1/IA",
+"sections": [
+"API/A"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2200-2300 MHz",
+"calc": {
+"groupId": 126756137,
+"beam": "TTCSTX1",
+"fMinMhz": 2200.0,
+"fMaxMhz": 2290.0,
+"emission": "2M00D7W--",
+"gainDbi": 7.5,
+"powerDensityDbwHz": -60.0,
+"peakPowerDbw": 3.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 650.0,
+"angleDeg": 90.0,
+"pfd": -143.7,
+"limit": -144.0,
+"marginDb": 0.3,
+"altitudeKm": 650.0,
+"inclinationDeg": 70.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 170,
+"stations": [
+{
+"id": 408577,
+"rxMhz": 2266.0,
+"licence": "MUUT",
+"lat": 67.51793,
+"lon": 26.36802
+},
+{
+"id": 440557,
+"rxMhz": 2279.0,
+"licence": "MUUT",
+"lat": 61.18644,
+"lon": 27.56091
+},
+{
+"id": 452076,
+"rxMhz": 2276.0,
+"licence": "MUUT",
+"lat": 64.21928,
+"lon": 21.59466
+},
+{
+"id": 454152,
+"rxMhz": 2274.0,
+"licence": "MUUT",
+"lat": 64.52194,
+"lon": 22.8198
+},
+{
+"id": 467765,
+"rxMhz": 2276.0,
+"licence": "MUUT",
+"lat": 63.31365,
+"lon": 25.92324
+},
+{
+"id": 477781,
+"rxMhz": 2279.0,
+"licence": "MUUT",
+"lat": 66.28073,
+"lon": 23.89423
+}
+]
+},
+{
+"ntcId": 126500129,
+"network": "HELLENIC FIRE SATELLITE SYSTEM",
+"adm": "GRC",
+"orbit": "NGSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2200-2300 MHz",
+"calc": {
+"groupId": 126708725,
+"beam": "TMS HIGH",
+"fMinMhz": 2272.305,
+"fMaxMhz": 2273.295,
+"emission": "90K0F1D--",
+"gainDbi": 3.799999952316284,
+"powerDensityDbwHz": -58.5,
+"peakPowerDbw": -9.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 510.0,
+"angleDeg": 90.0,
+"pfd": -143.8,
+"limit": -144.0,
+"marginDb": 0.2,
+"altitudeKm": 510.0,
+"inclinationDeg": 97.41000366210938,
+"lat": null,
+"lon": null
+},
+"stationCount": 1,
+"stations": [
+{
+"id": 454152,
+"rxMhz": 2274.0,
+"licence": "MUUT",
+"lat": 64.52194,
+"lon": 22.8198
+}
+]
+},
+{
+"ntcId": 326500083,
+"network": "O3B-A",
+"adm": "G",
+"orbit": "NGSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": 114500125,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 17.7-19.3 GHz (X=0)",
+"calc": {
+"groupId": 326766931,
+"beam": "T2R",
+"fMinMhz": 18800.0,
+"fMaxMhz": 19275.0,
+"emission": "10M0G7W--",
+"gainDbi": 36.599998474121094,
+"powerDensityDbwHz": -58.599998474121094,
+"peakPowerDbw": 11.399999618530273,
+"refBandwidthHz": 1000000.0,
+"distanceKm": 12511.5,
+"angleDeg": 4.1,
+"pfd": -114.9,
+"limit": -115.0,
+"marginDb": 0.1,
+"altitudeKm": 8062.0,
+"inclinationDeg": 0.0,
+"lat": null,
+"lon": null
+},
+"stationCount": 7,
+"stations": [
+{
+"id": 600529,
+"rxMhz": 19260.0,
+"licence": null,
+"lat": 60.2718,
+"lon": 25.01319
+},
+{
+"id": 601452,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 62.0089,
+"lon": 26.00131
+},
+{
+"id": 602266,
+"rxMhz": 18985.0,
+"licence": null,
+"lat": 61.9133,
+"lon": 28.92429
+},
+{
+"id": 605729,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 60.4789,
+"lon": 24.28419
+},
+{
+"id": 623938,
+"rxMhz": 19040.0,
+"licence": null,
+"lat": 59.8397,
+"lon": 23.0846
+},
+{
+"id": 631021,
+"rxMhz": 18930.0,
+"licence": null,
+"lat": 61.7846,
+"lon": 28.4193
+}
+]
+},
+{
+"ntcId": 126500156,
+"network": "JARVIS",
+"adm": "LUX",
+"orbit": "NGSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2200-2300 MHz",
+"calc": {
+"groupId": 126761431,
+"beam": "DLFEED",
+"fMinMhz": 2247.0,
+"fMaxMhz": 2270.0,
+"emission": "3M20D1DCN",
+"gainDbi": 8.0,
+"powerDensityDbwHz": -63.0,
+"peakPowerDbw": -2.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 500.0,
+"angleDeg": 90.0,
+"pfd": -144.0,
+"limit": -144.0,
+"marginDb": 0.0,
+"altitudeKm": 500.0,
+"inclinationDeg": 97.30000305175781,
+"lat": null,
+"lon": null
+},
+"stationCount": 3,
+"stations": [
+{
+"id": 408577,
+"rxMhz": 2266.0,
+"licence": "MUUT",
+"lat": 67.51793,
+"lon": 26.36802
+},
+{
+"id": 477915,
+"rxMhz": 2265.0,
+"licence": "MUUT",
+"lat": 63.60681,
+"lon": 20.46887
+},
+{
+"id": 480622,
+"rxMhz": 2266.0,
+"licence": "MUUT",
+"lat": 61.83238,
+"lon": 24.20575
+}
+]
+},
+{
+"ntcId": 126500125,
+"network": "VICTUS HAZE",
+"adm": "USA",
+"orbit": "NGSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 8025-8500 MHz",
+"calc": {
+"groupId": 126718145,
+"beam": "XDN",
+"fMinMhz": 8487.2,
+"fMaxMhz": 8496.8,
+"emission": "9M60G1D--",
+"gainDbi": 15.5,
+"powerDensityDbwHz": -69.5999984741211,
+"peakPowerDbw": 0.20000000298023224,
+"refBandwidthHz": 4000.0,
+"distanceKm": 350.0,
+"angleDeg": 90.0,
+"pfd": -140.0,
+"limit": -140.0,
+"marginDb": 0.0,
+"altitudeKm": 350.0,
+"inclinationDeg": 100.5,
+"lat": null,
+"lon": null
+},
+"stationCount": 0,
+"stations": []
+},
+{
+"ntcId": 126545097,
+"network": "REPLICATOR-2-1",
+"adm": "D",
+"orbit": "NGSO",
+"provision": "9.1/IA",
+"sections": [
+"API/A",
+"API/B"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "pfd_screen",
+"band": "RR Table 21-4, 2200-2300 MHz",
+"calc": {
+"groupId": 126655270,
+"beam": "STX",
+"fMinMhz": 2246.41,
+"fMaxMhz": 2246.59,
+"emission": "90K0G1D--",
+"gainDbi": 0.0,
+"powerDensityDbwHz": -53.599998474121094,
+"peakPowerDbw": -4.0,
+"refBandwidthHz": 4000.0,
+"distanceKm": 590.0,
+"angleDeg": 90.0,
+"pfd": -144.0,
+"limit": -144.0,
+"marginDb": 0.0,
+"altitudeKm": 590.0,
+"inclinationDeg": 97.69999694824219,
+"lat": null,
+"lon": null
+},
+"stationCount": 0,
+"stations": []
+}
+],
+"brListed": [
+{
+"ntcId": 116520381,
+"network": "SSG-CSL",
+"adm": "G",
+"orbit": "NGSO",
+"provision": "9.6",
+"sections": [
+"CR/C"
+],
+"actCode": "M",
+"targetNtcId": null,
+"kind": "br_listed",
+"band": "1525-2500 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"F",
+"P"
+],
+"directions": [
+"E"
+],
+"groupCount": 4,
+"stationCount": 342
+},
+{
+"ntcId": 123500251,
+"network": "PSN-146E",
+"adm": "INS",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": null,
+"kind": "br_listed",
+"band": "17700-18150 MHz",
+"coordProvisions": [
+"A30A#7.1"
+],
+"agreeStatus": [
+"O"
+],
+"directions": [
+"E"
+],
+"groupCount": 24,
+"stationCount": 9
+},
+{
+"ntcId": 125520062,
+"network": "ARABSAT-12P-67.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "br_listed",
+"band": "1518-1525 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 7,
+"stationCount": 0
+},
+{
+"ntcId": 125520063,
+"network": "ARABSAT-12Y-9W",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "br_listed",
+"band": "1518-1525 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 14,
+"stationCount": 0
+},
+{
+"ntcId": 125520064,
+"network": "ARABSAT-12Q-58.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "br_listed",
+"band": "1518-1525 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 7,
+"stationCount": 0
+},
+{
+"ntcId": 125520065,
+"network": "ARABSAT-12N-14.7E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "br_listed",
+"band": "1518-1526 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 9,
+"stationCount": 0
+},
+{
+"ntcId": 125520066,
+"network": "ARABSAT-12G-1E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "br_listed",
+"band": "1518-1526 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 9,
+"stationCount": 0
+},
+{
+"ntcId": 125520067,
+"network": "ARABSAT-12F-44.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "br_listed",
+"band": "1518-1526 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 17,
+"stationCount": 0
+},
+{
+"ntcId": 126520016,
+"network": "SPACERAN",
+"adm": "CAN",
+"orbit": "NGSO",
+"provision": "9.6",
+"sections": [
+"CR/C"
+],
+"actCode": "A",
+"targetNtcId": null,
+"kind": "br_listed",
+"band": "869-2500 MHz",
+"coordProvisions": [
+"9.14",
+"9.21/C"
+],
+"agreeStatus": [
+"F",
+"P"
+],
+"directions": [
+"E"
+],
+"groupCount": 21,
+"stationCount": 349
+},
+{
+"ntcId": 325500119,
+"network": "PSN-146E",
+"adm": "INS",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": 123500251,
+"kind": "br_listed",
+"band": "17700-18150 MHz",
+"coordProvisions": [
+"A30A#7.1"
+],
+"agreeStatus": [
+"O"
+],
+"directions": [
+"E"
+],
+"groupCount": 24,
+"stationCount": 9
+},
+{
+"ntcId": 325520062,
+"network": "ARABSAT-12P-67.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520062,
+"kind": "br_listed",
+"band": "1518-1525 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 7,
+"stationCount": 0
+},
+{
+"ntcId": 325520063,
+"network": "ARABSAT-12Y-9W",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520063,
+"kind": "br_listed",
+"band": "1518-1525 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 14,
+"stationCount": 0
+},
+{
+"ntcId": 325520064,
+"network": "ARABSAT-12Q-58.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520064,
+"kind": "br_listed",
+"band": "1518-1525 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 7,
+"stationCount": 0
+},
+{
+"ntcId": 325520065,
+"network": "ARABSAT-12N-14.7E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520065,
+"kind": "br_listed",
+"band": "1518-1526 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 9,
+"stationCount": 0
+},
+{
+"ntcId": 325520066,
+"network": "ARABSAT-12G-1E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520066,
+"kind": "br_listed",
+"band": "1518-1526 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 9,
+"stationCount": 0
+},
+{
+"ntcId": 325520067,
+"network": "ARABSAT-12F-44.5E",
+"adm": "ARS",
+"orbit": "GSO",
+"provision": "9.6",
+"sections": [
+"CR/C",
+"CR/D"
+],
+"actCode": "M",
+"targetNtcId": 125520067,
+"kind": "br_listed",
+"band": "1518-1526 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"Q"
+],
+"directions": [
+"E"
+],
+"groupCount": 17,
+"stationCount": 0
+},
+{
+"ntcId": 326500142,
+"network": "RGS-S-70E",
+"adm": "RUS",
+"orbit": "GSO",
+"provision": "11.2",
+"sections": [],
+"actCode": "M",
+"targetNtcId": 125500059,
+"kind": "br_listed",
+"band": "7100-7155 MHz",
+"coordProvisions": [
+"V/11.31.1/C"
+],
+"agreeStatus": [
+"V"
+],
+"directions": [
+"R"
+],
+"groupCount": 2,
+"stationCount": 0
+},
+{
+"ntcId": 326520021,
+"network": "SSG-CSL",
+"adm": "G",
+"orbit": "NGSO",
+"provision": "9.6",
+"sections": [
+"CR/C"
+],
+"actCode": "M",
+"targetNtcId": 116520381,
+"kind": "br_listed",
+"band": "1525-2500 MHz",
+"coordProvisions": [
+"9.14"
+],
+"agreeStatus": [
+"F",
+"P"
+],
+"directions": [
+"E"
+],
+"groupCount": 4,
+"stationCount": 342
+}
+],
+"findingsTotal": 54
+}
