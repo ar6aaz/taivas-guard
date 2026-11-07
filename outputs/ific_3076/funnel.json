@@ -68,8 +68,7 @@
   "results": {
     "by_assessment": {
       "above_indicative_threshold": 6,
-      "below_indicative_threshold": 9,
-      "calculated_no_criterion": 6,
+      "below_indicative_threshold": 15,
       "not_calculated": 8
     },
     "by_severity": {

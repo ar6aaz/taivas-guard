@@ -115,12 +115,40 @@ def test_bandwidth_above_25_khz_adds_the_annex_1_conversion(one_point):
     assert any("stands in for channel spacing" in a for a in d["assumptions"])
 
 
-def test_no_criterion_above_470_mhz_reports_the_value_without_calling_it_an_exceedance(one_point):
+def test_above_470_mhz_uses_the_400_470_threshold_as_traficom_said(one_point):
+    hit = run(tables((1, "RUS", "FB", "ADD"), freq=793.5, bandwidth=25.0))[0][0]
+    d = hit.details
+    assert d["assessment"] in {"above_indicative_threshold", "below_indicative_threshold"}
+    assert d["limit_db"] == 20 and d["mask_id"] == "tr2508_a1_400_470_traficom_above_470"
+    assert d["value_db"] == pytest.approx(direct(frequency_mhz=793.5), abs=0.005)
+    assert d["criterion"]["extension"]["source_band_mhz"] == [400, 470]
+    assert "Traficom said to apply above 470 MHz" in hit.title and "400-470 MHz" in hit.title
+    assert "extended above 470 MHz" in d["framework"]["cept_ecc"]["applies"]
+    assert any("Annexes 3 and 4 apply" in n for n in d["needs_info"])
+    docs = [c["doc"] for c in d["citations"]]
+    assert any(doc.startswith("Traficom answer") for doc in docs) and any("29.7-470" in c["clause"] for c in d["citations"])
+
+
+@pytest.mark.parametrize(("frequency", "mask_id"), [
+    (469, "tr2508_a1_400_470"),
+    (470, "tr2508_a1_400_470"),
+    (471, "tr2508_a1_400_470_traficom_above_470"),
+    (4000, "tr2508_a1_400_470_traficom_above_470"),
+    (4001, None),
+])
+def test_criterion_edges_around_470_and_4000_mhz(frequency, mask_id):
+    mask = rule_module.annex1_mask(frequency)
+    assert (mask["mask_id"] if mask else None) == mask_id
+    assert mask is None or mask["breakpoints"] == [[0, 20]]
+
+
+def test_without_a_criterion_the_value_is_reported_without_calling_it_an_exceedance(one_point, monkeypatch):
+    masks = {**rule_module._masks(), "extensions": []}
+    monkeypatch.setattr(rule_module, "_masks", lambda: masks)
     hit = run(tables((1, "RUS", "FB", "ADD"), freq=793.5, bandwidth=5000.0))[0][0]
     d = hit.details
     assert d["assessment"] == "calculated_no_criterion" and d["criterion"]["status"] == "none_available"
     assert not {"limit_db", "margin_db", "mask_id"} & d.keys()
-    assert d["value_db"] == pytest.approx(direct(frequency_mhz=793.5), abs=0.005)
     assert "no comparison" in hit.title and "above" not in hit.title and "exceed" not in hit.title.lower()
     assert any("Which criterion applies" in n for n in d["needs_info"])
     assert d["citations"][-1]["doc"] == "M4" and any("29.7-470" in c["clause"] for c in d["citations"])
@@ -524,7 +552,11 @@ def test_real_ruskeala_hand_check(real_3076):
                               rx_height_m=10, rx_clutter_height_m=10, rx_area="rural",
                               segments=[PathSegment(d["worst_point"]["distance_km"], "land")], erp_kw=10 ** ((4.8 - 30) / 10))
     assert d["value_db"] == pytest.approx(expected.field_strength_dbuv_m, abs=0.01)
-    assert "limit_db" not in d
+    # Above 470 MHz: the 400-470 MHz Annex 1 threshold of 20 dB(uV/m) per 25 kHz, as Traficom said (ticket 20)
+    bandwidth = notice.bandwidth_khz
+    limit = 20 + (10 * math.log10(bandwidth / 25) if bandwidth and bandwidth > 25 else 0)
+    assert d["limit_db"] == pytest.approx(limit, abs=0.005)
+    assert d["margin_db"] == pytest.approx(d["value_db"] - d["limit_db"], abs=0.01)
 
 
 @needs_real_data

@@ -20,7 +20,7 @@
   },
   "scope_notes": [
     "Values are set by frequency band and system type, not by neighbouring country.",
-    "Scope is land mobile systems from 29.7 to 470 MHz. The document gives no value above 470 MHz or for broadcasting.",
+    "Scope is land mobile systems from 29.7 to 470 MHz. The document gives no value above 470 MHz or for broadcasting. Above 470 MHz, see extensions: Traficom said to apply the criteria for above 400 MHz.",
     "Existing bilateral or multilateral agreements remain relevant and may differ (p.2, recommends 6 on p.4). None has been checked for Finland.",
     "Time: 10% is the stated default. Footnote 2 on p.6 says that in certain situations the 1% curves should be used for digital systems. Traficom has not yet answered which it uses (ticket 02).",
     "The document does not say which threshold applies exactly at a band edge such as 47 MHz.",
@@ -631,6 +631,20 @@
         "doc": "ECC Recommendation T/R 25-08 (edition 6 June 2025)",
         "clause": "Annex 4, A4.1, A4.2, Table 2",
         "page_or_url": "p.12, https://docdb.cept.org/download/4789"
+      }
+    }
+  ],
+  "extensions": [
+    {
+      "extension_id": "traficom_above_470",
+      "uses_mask": "tr2508_a1_400_470",
+      "f_low_mhz": 470,
+      "f_high_mhz": 4000,
+      "basis": "Traficom instruction, not T/R 25-08 itself: apply the T/R 25-08 criteria for the range above 400 MHz to frequencies above 470 MHz. Annex 1 only; the upper edge is the P.1546-6 range, our choice.",
+      "citation": {
+        "doc": "Traficom answer on Discord, 2026-11-07 (Jaakko)",
+        "clause": "Ticket 02, Q10: \"For frequencies above 470 MHz, you can apply the same criteria as those specified in CEPT Recommendation T/R 25-08 for the frequency range above 400 MHz.\"",
+        "page_or_url": ".scratch/ific-guard-delivery/issues/02-traficom-questions.md"
       }
     }
   ],

@@ -9,11 +9,12 @@ These are possible concerns for expert review. None is confirmed interference or
 | Assessment at the Finnish boundary | Notices |
 |---|---:|
 | Above the T/R 25-08 Annex 1 indicative threshold | 6 |
-| Below it | 9 (one crosses it at 1% time) |
-| Calculated, no criterion in the repository (above 470 MHz) | 6 |
+| Below it | 15. Four would cross it under an alternative: Kingisepp at 1% time, and three Ruskeala notices at 793-795 MHz if the 14 km land path were all sea |
 | Not calculated: mobile station with no notified antenna height | 8 |
 
 Severity: 1 high, 22 medium, 6 low. Five of the six above the threshold have `fxm_coord` rows saying coordination with FIN is completed, declared by the notifier, so they rank medium until checked against Traficom's records. The one high, 93075637 (KRL LYASKELYA, 152.9 MHz, 9.0 dB above), has no such row.
+
+Above 470 MHz, where T/R 25-08 stops, the 400-470 MHz Annex 1 threshold is applied, as Traficom said (ticket 20). Six notices at 793-795 MHz are now compared. They have 5 and 10 MHz channels, so the bandwidth conversion lifts the threshold from 20 to 43.0 and 44.6 dB(uV/m), and all six are 7.9 to 63.1 dB below it. Before ticket 20 they had no criterion. Severity counts didn't change.
 
 ## Filter funnel
 
@@ -39,7 +40,7 @@ From source rows read directly from the database, with `field_strength` called d
 |---|---|---|---:|---:|
 | 93082383 KOSTOMUKSHA | 152.025 MHz, 15.9 dBW e.r.p., 28 m above ground | 31.531 km land | 25.00 | 25.00, 13.00 above 12 |
 | 93075624 KINGISEPP | 425.825 MHz, 18.2 dBW e.r.p., 45 m above ground | 29.63 km land, 98.78 km cold sea | 11.11 | 11.11, 8.89 below 20 |
-| 93082392 RUSKEALA | 793.5 MHz, 4.8 dBW e.r.p., 55 m above ground, `eff_hgt` 72 m at azimuth 310 | 13.94 km land, bearing 305.9 | 35.10 | 35.10, no criterion |
+| 93082392 RUSKEALA | 793.5 MHz, 4.8 dBW e.r.p., 55 m above ground, `eff_hgt` 72 m at azimuth 310 | 13.94 km land, bearing 305.9 | 35.10 | 35.10, 7.91 below 43.01 (20 + 23.01 for a 5 MHz channel) |
 
 Distances and the azimuth were recalculated separately from the coordinates. The land and sea split in the Kingisepp row comes from the rule, not from a separate calculation.
 
@@ -51,13 +52,13 @@ This checks the Python port for these inputs only. It does not check the inputs,
 
 ## Reproducibility
 
-Exported in the screening container from the clean Compose run at code commit ba6f09a. The manifest's `code_version` is empty because the image has no Git history, but its code hashes match that commit. A second empty database, loaded by uploading `brific3075.mdb` and `brific3076.mdb`, gave the same cases. The only differences were the source URL, and the hash and size of the uploaded file.
+Exported at code commit 909f2de (ticket 20), recorded clean in the manifest. Generated on macOS from a fresh SQLite database with the shared `brific3075.zip` and `brific3076.zip` imported, because the Compose ports were in use. Those archives have the same hashes as the ITU downloads, so only `source_url` differs from the clean Compose run (`import:` rather than the ITU address).
 
 | File | SHA-256 |
 |---|---|
-| cases.csv | 2d5db61bd5a370be6d9ac6fca2a4f47dc2c906990da3af41a5b9a3ea19951ccd |
-| cases.json | 43229b8d9a09bbd18830b484d1bcdedc30d612eef9519451f2fdec98dc323a4d |
-| funnel.json | d90fcab2e1986f586dd12b180bcf20c64f51a4b6e7954d4ef0c4f850c8207373 |
+| cases.csv | 0f0ccec28922cd2d8597982ff00fe70d2f1e28d874cd7e3734d936f3157db1c9 |
+| cases.json | e58fbce05a92b4c693f0ccd78b2994a0d4041b201eea33e9374377b3364ae642 |
+| funnel.json | f4ab5f538bc7465a3b81ef2cfb4f6f9521cd153e97f6569fd38b2376b1a8a205 |
 
 ## Effect of protecting TX frequencies (ticket 16)
 

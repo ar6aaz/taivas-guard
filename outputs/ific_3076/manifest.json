@@ -43,16 +43,16 @@
     "terrestrial/__init__.py": "b1192ebb2ceb740477dd225c0bf2abf4801148b53c5d9df707fb1a4a99607d39",
     "terrestrial/adapter.py": "953378a335e902e98683677011e4ffee3e4dde2ba9ad4482e41bd316042ab1e4",
     "terrestrial/diff.py": "4082c008511b7be30aad48509806f3313f8ea0ea778aa3bebf4f2d2271573eb5",
-    "terrestrial/rule_field_strength.py": "05870eb5f1ea32902f8f379fca49baf99583a3be54f8c2541cabe59b35b664d1",
+    "terrestrial/rule_field_strength.py": "5a2fc92100856c81d7f7afb698b1a262fc9805ef1f99e1a24b5faaf73979d97c",
     "terrestrial/trends.py": "d857ba5d6ce1ab9cc9f9246e01ddc882499bab5ba91fccfea2eae63b882b8f86"
   },
   "code_version": {
-    "commit": null,
-    "dirty": null
+    "commit": "909f2de29e3b9e74358e05bd2daf82e044000b8c",
+    "dirty": false
   },
   "config": {
     "data_sha256": {
-      "field_strength.json": "8cfa3eaa234bb8ecb21c0a1e2e977946314dd18ab067f190c23ff2c3900ff378",
+      "field_strength.json": "549b32d53d51154f6f968a2e078c57c424720c8669d245a854da0176fdb240f6",
       "finland_boundary.json": "0d93ff3f681aed4074974b0a777ae0cdc3c6f122f32ce4738db28e73e10c0786",
       "land_near_finland.json": "7a6abddf031822bc35f6b8a61fd30b3bba09d603e130bea9baac96b1f7df546b"
     },
@@ -70,7 +70,7 @@
   },
   "domain": "terrestrial",
   "format_version": 1,
-  "generated_at": "2026-11-07T08:13:57.282008+00:00",
+  "generated_at": "2026-11-07T09:03:30.970744+00:00",
   "issue_no": 3076,
   "limitations": [
     "Possible concerns for expert review, not confirmed interference or regulatory breaches.",
@@ -85,21 +85,21 @@
   ],
   "mdb_sha256": "7358853076caab70e2a18c1d86cc1d22be40a28d0a17202aa6ad35729fce234d",
   "output_sha256": {
-    "cases.csv": "2d5db61bd5a370be6d9ac6fca2a4f47dc2c906990da3af41a5b9a3ea19951ccd",
-    "cases.json": "43229b8d9a09bbd18830b484d1bcdedc30d612eef9519451f2fdec98dc323a4d",
-    "funnel.json": "d90fcab2e1986f586dd12b180bcf20c64f51a4b6e7954d4ef0c4f850c8207373"
+    "cases.csv": "0f0ccec28922cd2d8597982ff00fe70d2f1e28d874cd7e3734d936f3157db1c9",
+    "cases.json": "e58fbce05a92b4c693f0ccd78b2994a0d4041b201eea33e9374377b3364ae642",
+    "funnel.json": "f4ab5f538bc7465a3b81ef2cfb4f6f9521cd153e97f6569fd38b2376b1a8a205"
   },
   "provisional_format": true,
   "rule_ids": [
     "terrestrial-p1546",
     "terrestrial-not-calculated"
   ],
-  "run_time_s": 6.773606,
+  "run_time_s": 8.172994,
   "scope": {
     "funnel_file": "funnel.json",
     "service": "land mobile, station classes FB and ML"
   },
   "source_sha256": "ba9d0605a4a5494162e17650c290401d84deaef29030cbdbb61e4b00c834c4c2",
   "source_size_bytes": 2406450,
-  "source_url": "https://www.itu.int/en/ITU-R/terrestrial/brific/BRIFIC/MDB/brific3076.zip"
+  "source_url": "import:brific3076.zip"
 }

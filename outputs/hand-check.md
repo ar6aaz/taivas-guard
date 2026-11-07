@@ -105,9 +105,9 @@ Sweep: 114 positioned notices from the five neighbours, of which 22 are within 3
 - Within 300 km on Natural Earth but dropped by the filter (possible misses): []
 - Kept by the filter but over 300 km on Natural Earth: [('93075611', 306.3), ('93075612', 306.3), ('93075613', 306.3), ('93075614', 306.3), ('93075615', 306.4), ('93075616', 306.2), ('93075617', 306.3)]
 - 21 calculated cases against the free-space ceiling 106.9 - 20 log d + 10 log P(kW): above it: [].
-- Possible concern, needs expert criterion: KRL RUSKEALA (RUS) 793.5 MHz: 35.1 dB(uV/m) at 14 km : raw 61.9303,30.5878, 793.5 MHz; path in case 13.94 km, hand distance 13.94 km; value 35.10, threshold None.
+- KRL RUSKEALA (RUS) 793.5 MHz: 35.1 dB(uV/m) at 14 km on the Finnish boundary, 7.9 dB below the : raw 61.9303,30.5878, 793.5 MHz; path in case 13.94 km, hand distance 13.94 km; value 35.10, threshold 43.01.
 - PSK PSKOV (RUS) 154.6 MHz: -25.4 dB(uV/m) at 301 km on the Finnish boundary, 37.5 dB below the : raw 57.7978,28.3900, 154.6 MHz; path in case 301.24 km, hand distance 301.24 km; value -25.45, threshold 12.0.
-- Possible concern, needs expert criterion: MUR TITOVKA (RUS) 794.74 MHz: -18.5 dB(uV/m) at 101 k: raw 69.4858,31.7731, 794.74 MHz; path in case 100.59 km, hand distance 100.59 km; value -18.53, threshold None.
+- KRL RUSKEALA (RUS) 794.74 MHz: 21.6 dB(uV/m) at 14 km on the Finnish boundary, 23.0 dB below th: raw 61.9533,30.5864, 794.74 MHz; path in case 13.93 km, hand distance 13.93 km; value 21.57, threshold 44.59.
 - not calculated: Not calculated, expert review needed: LEN KINGISEPP (RUS) ML 415.825 MHz: fxm_ant has no height above ground or effectiv
 - not calculated: Not calculated, expert review needed: LEN OBL (RUS) ML 424.575 MHz: fxm_ant has no height above ground or effective heig
 - not calculated: Not calculated, expert review needed: LEN KINGISEPP (RUS) ML 414.075 MHz: fxm_ant has no height above ground or effectiv

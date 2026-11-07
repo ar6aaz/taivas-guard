@@ -322,10 +322,34 @@ def _all_of(kind: str, worst: Worst, frequency: float, time_percent: float = TIM
 def annex1_mask(frequency_mhz: float) -> dict | None:
     """T/R 25-08 Annex 1 row for a frequency. Annex 3 and 4 need the Finnish system, which we do not have.
 
-    At a shared band edge, the stricter value is used: the document does not say which applies.
+    At a shared band edge, the stricter value is used: the document does not say which applies. Above
+    470 MHz, where T/R 25-08 stops, an extension in the masks file reuses a row on Traficom's
+    instruction, and the returned mask carries it under "extension".
     """
-    rows = [m for m in _masks()["masks"] if m["annex"] == 1 and m["f_low_mhz"] <= frequency_mhz <= m["f_high_mhz"]]
-    return min(rows, key=lambda m: m["breakpoints"][0][1]) if rows else None
+    data = _masks()
+    rows = [m for m in data["masks"] if m["annex"] == 1 and m["f_low_mhz"] <= frequency_mhz <= m["f_high_mhz"]]
+    if rows:
+        return min(rows, key=lambda m: m["breakpoints"][0][1])
+    for extension in data.get("extensions", []):
+        if extension["f_low_mhz"] < frequency_mhz <= extension["f_high_mhz"]:
+            base = next(m for m in data["masks"] if m["mask_id"] == extension["uses_mask"])
+            return {
+                **base,
+                "mask_id": f"{base['mask_id']}_{extension['extension_id']}",
+                "f_low_mhz": extension["f_low_mhz"],
+                "f_high_mhz": extension["f_high_mhz"],
+                "basis": f"{base['basis']}; {extension['basis']}",
+                "extension": {**extension, "source_band_mhz": [base["f_low_mhz"], base["f_high_mhz"]]},
+            }
+    return None
+
+
+def _threshold_name(mask: dict) -> tuple[str, str]:
+    """How a title names the threshold, and what it adds after the value."""
+    if mask.get("extension"):
+        low, high = mask["extension"]["source_band_mhz"]
+        return f"T/R 25-08 {low:g}-{high:g} MHz indicative threshold", ", which Traficom said to apply above 470 MHz"
+    return "T/R 25-08 indicative threshold", ""
 
 
 def bandwidth_conversion_db(bandwidth_khz: float | None) -> float:
@@ -590,6 +614,7 @@ class FieldStrengthRule:
         }
         if limit is not None:
             details.update(limit_db=round(limit, 2), margin_db=round(margin, 2), mask_id=mask["mask_id"])
+            details["criterion_name"], details["criterion_note"] = _threshold_name(mask)
 
         ranking = score_finding(details)
         details["severity_score"] = ranking["score"]
@@ -625,6 +650,8 @@ class FieldStrengthRule:
                 items.append("Bandwidth is missing, so no bandwidth conversion was applied, which gives the lower threshold.")
             elif bandwidth > 25:
                 items.append("Notified bandwidth stands in for channel spacing in the Annex 1 conversion, with power assumed uniform across the channel.")
+            if mask.get("extension") and bandwidth and bandwidth > 25:
+                items.append("Above 470 MHz the Annex 1 conversion, written for land-mobile channels, is applied to this wider channel as Traficom's instruction implies. It raises the threshold by the full 10 log10(bandwidth/25 kHz).")
             else:
                 items.append(f"Notified bandwidth of {bandwidth:g} kHz fits inside the 25 kHz reference bandwidth, so no conversion applies.")
         return items
@@ -638,9 +665,13 @@ class FieldStrengthRule:
                 "note": "Verbatim from the notice, not interpreted. The repository's reference passages do not include RR Article 11 or the GE06 Agreement.",
             },
             "cept_ecc": {
-                "applies": "T/R 25-08 Annex 1" if mask else None,
-                "note": ("Indicative coordination threshold (recommends 2). Annexes 3 and 4 need the Finnish system type, and are not used."
-                         if mask else "T/R 25-08 covers 29.7 to 470 MHz. No criterion for this frequency is in the repository; ECC decisions were not obtained."),
+                "applies": ("T/R 25-08 Annex 1, extended above 470 MHz on Traficom's instruction" if mask and mask.get("extension")
+                            else "T/R 25-08 Annex 1" if mask else None),
+                "note": ("T/R 25-08 covers 29.7 to 470 MHz. Traficom said to apply its criteria for above 400 MHz here, so the "
+                         "400-470 MHz Annex 1 indicative threshold is used. Annexes 3 and 4 need the Finnish system type, and are not used."
+                         if mask and mask.get("extension") else
+                         "Indicative coordination threshold (recommends 2). Annexes 3 and 4 need the Finnish system type, and are not used."
+                         if mask else "No criterion in the repository applies at this frequency; ECC decisions were not obtained."),
             },
             "national": ({**m4, "note": "From M4. No Finnish assignment list is available."} if m4 else
                          {"note": "No M4 row found for this frequency."}),
@@ -664,6 +695,7 @@ class FieldStrengthRule:
             "location_percent": mask["location_percent"],
             "rx_height_m": mask["rx_height_m"],
             "basis": mask["basis"],
+            **({"extension": mask["extension"]} if mask.get("extension") else {}),
             "border_applicability": border["notes"] if border else f"{notice.adm} has no entry in data/masks/field_strength.json.",
             "meaning": "Crossing it means coordination is indicated. It is not a limit on what may be notified.",
         }
@@ -674,6 +706,8 @@ class FieldStrengthRule:
             items.append(f"Which criterion applies at {notice.frequency_mhz:g} MHz? None is in the repository, so no comparison was made.")
         else:
             items.append("Which time percentage does Traficom use, 10% or the 1% of footnote 2 for digital systems? (ticket 02)")
+            if mask.get("extension"):
+                items.append("Traficom said to use the T/R 25-08 criteria for above 400 MHz here. Only Annex 1 is used: do Annexes 3 and 4 apply too?")
             items.append("Does a bilateral Finland agreement replace these values? None has been checked.")
             border = next((b for b in _masks()["borders"] if b["adm"] == notice.adm), None)
             if border and border.get("annex_5_country_type") is None:
@@ -757,15 +791,17 @@ class FieldStrengthRule:
         if assessment == "above_indicative_threshold":
             declared = details["fxm_coord"]["fin_completed_declared_by"]
             note = f"; {', '.join(declared)} declares FIN coordination completed, please verify" if declared else ""
-            return f"Possible concern: {head}, {details['margin_db']:.1f} dB above the T/R 25-08 indicative threshold of {details['limit_db']:g}, under stated assumptions{note}"
+            return f"Possible concern: {head}, {details['margin_db']:.1f} dB above the {details['criterion_name']} of {details['limit_db']:g}{details['criterion_note']}, under stated assumptions{note}"
         if assessment == "below_indicative_threshold":
-            return f"{head}, {-details['margin_db']:.1f} dB below the T/R 25-08 indicative threshold of {details['limit_db']:g}, under stated assumptions"
+            return f"{head}, {-details['margin_db']:.1f} dB below the {details['criterion_name']} of {details['limit_db']:g}{details['criterion_note']}, under stated assumptions"
         return f"Possible concern, needs expert criterion: {head}; no criterion in the repository, so no comparison"
 
     def _citations(self, notice, mask, m4) -> list[dict]:
         citations = [{"doc": IMPLEMENTATION["model"], "clause": "Annex 5, Annex 6", "page_or_url": f"DOI {IMPLEMENTATION['source_doi']}"}]
         if mask:
             citations += [mask["citation"], TR_FOOTNOTE_CITATION]
+            if mask.get("extension"):
+                citations += [TR_SCOPE_CITATION, mask["extension"]["citation"]]
             if notice.bandwidth_khz and notice.bandwidth_khz > 25:
                 citations.append(TR_CONVERSION_CITATION)
             border = next((b for b in _masks()["borders"] if b["adm"] == notice.adm), None)

@@ -1,6 +1,6 @@
 # 20 Terrestrial criterion above 470 MHz
 
-Status: ready-for-agent
+Status: resolved
 Type: task
 Size: S
 Blocked by: none
@@ -33,3 +33,22 @@ Jaakko (Traficom), recorded in ticket 02 Q10:
 - Each new comparison names its basis.
 - One recomputed case is checked by hand.
 - `uv run pytest` passes.
+
+## Comments
+
+2026-11-07, done at 909f2de:
+
+- **Data:** `data/masks/field_strength.json` has an `extensions` entry, `traficom_above_470`. It reuses `tr2508_a1_400_470` from 470 to 4000 MHz and cites both T/R 25-08 and Traficom's answer. The T/R 25-08 rows are unchanged.
+- **Cases:** each one above 470 MHz names the 400-470 MHz threshold, says Traficom said to apply it, cites the scope note, and asks whether Annexes 3 and 4 apply. A new assumption says the bandwidth conversion is applied to wide channels.
+- **3076 before:** 6 above, 9 below, 6 with no criterion, 8 not calculated. Severity 1 high, 22 medium, 6 low.
+- **3076 after:** 6 above, 15 below, 8 not calculated. Severity unchanged.
+- **The six newly compared notices:** 793-795 MHz, with 5 and 10 MHz channels. The conversion makes their thresholds 43.0 and 44.6 dB(uV/m), and they are 7.9 to 63.1 dB below. The three at Ruskeala, 14 km from the boundary, would cross it if the land path were all sea, which keeps them at medium.
+- **Checks:**
+  - Ruskeala's hand check (`test_real_ruskeala_hand_check`) now asserts the threshold.
+  - Edge tests cover 469, 470, 471, 4000 and 4001 MHz.
+  - The upstream Octave comparison still matches all 21, with the largest difference 0.0053 dB.
+  - 560 Python and 32 frontend tests pass.
+- **Open:**
+  - Whether Annexes 3 and 4 also apply.
+  - Whether the 25 kHz conversion is meant for 5-10 MHz channels. Both are for Traficom.
+

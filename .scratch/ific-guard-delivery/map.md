@@ -31,7 +31,7 @@ Status values come from `docs/agents/triage-labels.md`. Size is a rough relative
 | 17 | AP30, AP30A and AP30B plan screening | Later, `needs-info` | L | none | Required by the brief, gap declared for now |
 | 18 | Pending work before submission (checklist) | Coordinator | L | none | Mixed, see ticket |
 | 19 | Link pfd results to special-interest stations | Open, on `develop` | L | none | Top priority for the user |
-| 20 | Terrestrial criterion above 470 MHz | Open, on `develop` | S | none | Required: Traficom answered Q10 |
+| 20 | Terrestrial criterion above 470 MHz | Done at `909f2de` on `develop` | S | none | Required: Traficom answered Q10 |
 
 "Required" follows the brief: datasets marked `**` are mandatory, it asks for GSO and non-GSO pfd, the side quest including trends, and for all existing issues to be evaluable. A UI is not named in the brief.
 
